@@ -1,64 +1,151 @@
 series:
-  theme: Using AI in article writing and development for 30 days as an experiment
-  cadence: Daily
-  audience:
-    profile: Technically literate, AI-aware, skeptical
-    assumed_knowledge:
-      - Familiarity with AI-assisted work
-      - Familiarity with software or knowledge work
+  name: 30-days-ai-articles
+
+  stance:
+    ai_position: skeptical_tool_user
+    description: >
+      AI is treated as a useful but unreliable tool.
+      It is used deliberately, verified systematically,
+      and never treated as an authority.
+
+  ai_usage_policy:
+    models:
+      - paid_openai
+      - local_models
+      - online_models
+    pareto_principle:
+      enabled: true
+      target_completion: 0.8
+      explanation_link: https://en.wikipedia.org/wiki/Pareto_principle
+    verification_required: true
+
+  linkedin_policy:
+    enabled: true
+    applies_to_all_articles: true
+    purpose:
+      - Generate shortened versions of each article
+      - Link back to the full article and repository
+    constraints:
+      tone:
+        - skeptical
+        - non_promotional
+      forbidden:
+        - hype_language
+        - universal_claims
+        - emojis
+        - marketing_hooks
 
 article:
-  day: 01
-
   identity:
+    day: 1
+    type: portfolio_progress
     title_prefix: "Day 01"
-    theme: Motivation for the experiment and how it will be conducted
+    theme: Portfolio progress and evaluation of AI in real development workflows
 
-  purpose:
-    - Explain why the experiment exists before showing results
-    - Make AI usage explicit and inspectable
-    - Establish credibility through transparency, not claims
+  disclosure:
+    mandatory: true
+    placement: after_tldr
+    wording: canonical_frozen
+
+  intent:
+    primary:
+      - Document early portfolio development progress
+      - Establish a realistic baseline for evaluating AI assistance
+    secondary:
+      - Demonstrate informed and disciplined AI usage
+      - Set expectations for slower but more inspectable progress
 
   content:
-    motivations:
-      - Build deeper expertise in correct AI usage
-      - Create portfolio artifacts with visible AI involvement
-      - Re-implement scaled-down versions of prior professional tools
+    focus:
+      - Rebuilding scaled-down versions of older enterprise projects
+      - Using prior work as a stable baseline for comparison
+      - Emphasizing understanding and correctness over speed
 
-    experiment_rules:
-      - Apply a Pareto-style split: AI drafts, human refines
-      - All core ideas originate from the author
-      - This document acts as a living specification
-      - Use paid OpenAI access to mirror corporate defaults
+    progress_snapshot:
+      rebuilt_component:
+        description: >
+          Initial reconstruction of an older internal tool previously built
+          under enterprise constraints.
+      completed:
+        - Project scaffolding recreated
+        - Core structure mapped against original design
+      open_questions:
+        - Which parts benefit meaningfully from AI assistance
+        - Where manual reconstruction is still required
 
-    transparency:
-      expectations:
-        - State where AI helps and where it does not
-        - Avoid unqualified productivity claims
-        - Treat friction and failure as valid outcomes
+    ai_usage_observations:
+      helpful_for:
+        - Scaffolding and boilerplate generation
+        - Recalling framework idioms not used recently
+        - Acting as a second set of eyes during refactoring
+      not_helpful_for:
+        - Architectural decisions
+        - Correctness guarantees
+        - Recovering original design intent
+
+    constraints_and_tradeoffs:
+      - Reconstruction chosen over redesign to preserve comparability
+      - Progress intentionally slowed to maintain clarity
+      - Novelty deprioritized in favor of signal
+
+  framework:
+    name: Baseline Before Acceleration
+    metaphor: >
+      Timing a runner only after the track has been clearly marked
+    components:
+      - name: Known Reference Point
+        includes:
+          - Prior architecture
+          - Historical tradeoffs
+        excludes:
+          - Speculative redesign
+        cost_of_ignoring: >
+          Any claimed improvement becomes meaningless
+
+      - name: AI as Recall, Not Authority
+        includes:
+          - Pattern recall
+          - Scaffolding
+        excludes:
+          - Domain judgment
+          - Correctness decisions
+        cost_of_ignoring: >
+          Confidence replaces understanding
+
+      - name: Change Attribution
+        includes:
+          - Tracking which changes were AI-assisted
+        excludes:
+          - Vague statements like "AI helped"
+        cost_of_ignoring: >
+          Cause and effect become indistinguishable
+
+  structure:
+    required_sections:
+      - tldr
+      - series_disclosure
+      - why_you_should_read_this
+      - narrative_introduction
+      - framework_definition
+      - application_example
+      - reflection_and_invitation
 
 meta:
   writing:
-    format: Markdown
-    governing_ruleset: RIS v2.1
+    format: markdown
+    governing_ruleset: RIS_v2_2
     tone:
-      - Conversational
-      - Reflective
-      - Non-authoritative
+      - reflective
+      - skeptical
+      - conversational
+      - non_promotional
 
-  structure:
-    artifacts:
-      repository:
-        intent: Provide a full audit trail
-        includes:
-          - Writing RIS
-          - Prompt file(s)
-          - Initial AI-generated draft (via commit history)
-          - Final edited article
-          - Reusable daily article template
-
-    references:
-      goals:
-        - Explain non-obvious terms when ambiguity exists
-        - Link relevant articles
-        - Link directly to repository commits
+  artifacts:
+    repository:
+      required: true
+      link: https://github.com/constantinos-solomonides/30-days-ai-articles
+    linkedin_shortening:
+      required: true
+      variants:
+        - short
+        - medium
