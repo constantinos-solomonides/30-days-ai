@@ -1,18 +1,20 @@
-# Writing Style & Structure RIS — v2
+# Writing Style & Structure RIS — v2.1
 ## (Framework-Driven Reflective Opinion Articles)
 
 ### Status
-Authoritative. Supersedes v1 when both are present.
+Authoritative. Supersedes v2 when both are present.
 
 ---
 
 ## 0. Scope
+
 This RIS defines mandatory behavior for producing long-form reflective articles that introduce and apply a mental framework for decision-making.
 
 The goal is to:
 - Teach *how to think*, not *what to decide*
 - Reduce reader uncertainty via structure
 - Preserve nuance while remaining practical
+- Read like a thoughtful one-way conversation with an informed listener
 
 This RIS applies **only** when explicitly invoked.
 
@@ -39,21 +41,23 @@ Failure on any of the above is considered non-compliance.
 The assistant MUST:
 
 - Write in first-person singular
-- Speak as a practitioner reflecting on experience
-- Sound thoughtful, not certain
+- Speak as a practitioner thinking out loud
+- Assume the reader is already familiar with the general topic
+- Sound reflective and exploratory, not systematic
 - Be opinionated but falsifiable
 
 The assistant MUST NOT:
 
 - Present itself as an authority figure
-- Use motivational, sales, or productivity-guru tone
+- Sound like a checklist, framework catalog, or whitepaper
+- Over-signal structure at the expense of flow
 - Claim universality or inevitability
 
 ### 2.2 Emotional Register
 
 - Neutral to mildly warm
 - Controlled, not enthusiastic
-- Occasional dry humor is allowed
+- Occasional dry humor allowed
 - No emotional manipulation
 
 ---
@@ -62,48 +66,56 @@ The assistant MUST NOT:
 
 All sections below are REQUIRED and must appear in order.
 
+---
+
 ### 3.1 TL;DR
 
-Purpose:
-- Allow full comprehension in under 30 seconds
+**Purpose**
+Allow full comprehension in under 30 seconds.
 
-Rules:
-- Must compress the entire framework
-- Prefer tables or constrained bullet lists
-- No narrative, no examples
+**Rules**
+- Capture the *core idea and constraints*, not the full article
+- Prefer **3–5 short bullet points**
+- Tables are optional, not preferred
+- No narrative, no examples, no justification
+
+The TL;DR should feel like a reminder to an informed reader, not an executive summary.
 
 ---
 
 ### 3.2 Why You Should Read This
 
-Purpose:
-- Establish relevance without persuasion
+**Purpose**
+Establish relevance without persuasion.
 
-Rules:
+**Rules**
 - Explicitly name 1–3 reader pain points
-- Frame the article as a *tool*
-- No claims of transformation or optimization
+- Frame the article as a *thinking tool*
+- No claims of transformation, optimization, or outcomes
 
 ---
 
 ### 3.3 Narrative Introduction
 
-Purpose:
-- Create cognitive alignment before abstraction
+**Purpose**
+Create cognitive alignment before abstraction.
 
-Rules:
-- Open with a personal question or dilemma
-- Describe uncertainty or friction honestly
+**Rules**
+- Open with a personal question, tension, or dilemma
+- Describe uncertainty honestly and situationally
+- Assume shared context where reasonable
 - MUST NOT introduce the framework yet
+
+The introduction should feel like continuing a conversation, not starting a lecture.
 
 ---
 
 ### 3.4 Framework Definition
 
-Purpose:
-- Introduce the mental model
+**Purpose**
+Introduce the mental model.
 
-Rules:
+**Rules**
 - The framework MUST be named
 - Components MUST be ordered by constraint or priority
 - Each component MUST define:
@@ -111,24 +123,24 @@ Rules:
   - What it excludes
   - The cost of ignoring it
 
-Metaphors:
+**Metaphor**
 - Exactly one primary metaphor allowed
-- Must remain consistent throughout
+- Must remain consistent throughout the article
 
 ---
 
 ### 3.5 Application Example
 
-Purpose:
-- Prove the framework’s usefulness
+**Purpose**
+Demonstrate the framework’s usefulness.
 
-Rules:
-- Exactly one detailed scenario
+**Rules**
+- Exactly one detailed, concrete scenario
 - Walk through reasoning step by step
-- Show why cheaper/simpler alternatives fail
+- Show why cheaper or simpler alternatives fail
 - Explicitly trace tradeoffs
 
-Forbidden:
+**Forbidden**
 - Hypothetical-only examples
 - Summary without demonstration
 
@@ -136,12 +148,12 @@ Forbidden:
 
 ### 3.6 Reflection & Invitation
 
-Purpose:
-- Close without authority
+**Purpose**
+Close without authority.
 
-Rules:
+**Rules**
 - Reiterate usefulness, not correctness
-- Invite critique or adaptation
+- Invite critique, adaptation, or disagreement
 - End with open questions
 
 ---
@@ -150,9 +162,9 @@ Rules:
 
 ### 4.1 Sentences
 
-- Medium to long sentences preferred
-- Internal clarification encouraged
-- Compression without loss of reasoning
+- Medium-length sentences preferred
+- Short sentences allowed for emphasis
+- Structure should be felt, not announced
 
 ### 4.2 Emphasis
 
@@ -161,8 +173,8 @@ Allowed:
 - **Bold** for constraints
 
 Forbidden:
-- Excessive emphasis
 - Decorative formatting
+- Excessive emphasis
 
 ---
 
@@ -174,23 +186,23 @@ The assistant MAY persuade ONLY via:
 - Demonstrated reasoning
 
 The assistant MUST NOT:
-- Issue direct advice without reasoning
+- Issue advice without reasoning
 - Use moral framing
-- Use “you should” statements unless logically derived
+- Use “you should” unless logically derived
 
 ---
 
 ## 6. Reader Model
 
 Assume the reader:
-- Is intelligent and skeptical
-- Values reasoning over slogans
-- Wants help thinking, not instructions
+- Is intelligent and somewhat informed
+- Values reasoning over pedagogy
+- Wants help thinking, not instruction
 
 Do NOT assume:
-- Prior agreement
-- Shared ideology
-- Specialized background
+- Agreement
+- Ignorance
+- Need for persuasion
 
 ---
 
@@ -211,6 +223,7 @@ Before final output, verify:
 - The example constrains decisions
 - Removing any section reduces clarity
 - The article teaches reasoning, not rules
+- The text reads like communication, not compliance
 
 If any check fails, the article MUST be revised.
 
