@@ -1,11 +1,12 @@
-I’m running a 30-day experiment using AI to write articles and rebuild parts of my portfolio — deliberately, and with skepticism.
+I’m running a 30-day experiment using AI to write articles and rebuild parts of my portfolio — deliberately, and with skepticism, to evaluate the impact it has on my workflow and showcase my work.
 
-I use AI the way I’d use an enthusiastic junior: it helps me get roughly 80% of the way there, then I review, correct, and take responsibility for the result (Pareto principle: https://en.wikipedia.org/wiki/Pareto_principle).
+I plan to use AI the way I’d use an enthusiastic junior: it helps me get roughly 80% of the way there, then I review, correct, and take responsibility for the result, in line with the [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
-This particular entry focuses on **portfolio development**, not writing. I’m rebuilding scaled-down versions of older projects to get a clearer signal on where AI actually helps in real workflows — and where it doesn’t.
+The day 1 post focuses on the experiment and explains why I’m rebuilding scaled-down versions of older projects instead of building something entirely new
 
 The full article (with context, constraints, and reasoning):
-👉 [LINK_TO_FULL_ARTICLE]
+👉 [substack](https://open.substack.com/pub/csolomonides/p/doctor-coffee-rent?r=1g7elm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true)
+👉 [WordPress](https://anthropocentricsoftware.wordpress.com/2026/01/30/30-days-of-ai-day-01-the-experiment/)
 
-The repository with drafts, prompts, and artifacts (when relevant):
-👉 [LINK_TO_REPOSITORY_OR_DEMO]
+The repository with drafts, prompts, and artifacts for articles (when relevant):
+👉 [GitHub link](https://github.com/constantinos-solomonides/30-days-ai)
