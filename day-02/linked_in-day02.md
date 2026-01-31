@@ -9,21 +9,25 @@ Under time pressure.
 When context is already gone.
 That’s how documentation turns into fiction.
 
-In Day 02 of The Pareto Line, I treat documentation as an insurance policy.
+In Day 02 of The Pareto Line, I explain why documentation as an insurance policy.
 You don’t hope to need it.
 But when you do, you’re glad it’s there.
 
-Some failures are systemic.
-Documentation isn’t treated as a deliverable.
-Agile gets used as an excuse.
-Others are individual choices.
-Waiting for “later”.
-Not having a system.
-Assuming memory will be enough.
+Some failures are systemic:
 
-AI helps with cleanup and restructuring.
-It doesn’t understand your system for you.
-Like an enthusiastic junior, it still needs supervision.
+- Documentation isn't treated as a deliverable
+- Agile gets used as an excuse
+
+Others are individual choices:
+- Waiting for "later" that never comes
+- Not having a system in place
+- Assuming memory will be reliable enough
+
+AI can help with cleanup and restructuring.
+It doesn't replace documentation. It evolves it.
+It doesn't understand your system for you.
+
+Like an enthusiastic junior, it still needs supervision to perform optimally
 
 📄 Full article:
 - WordPress 👉 https://anthropocentricsoftware.wordpress.com/2026/01/31/ai-day-02-on-writing-good-documentation/
