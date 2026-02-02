@@ -1,0 +1,129 @@
+series:
+  name: 30-days-ai-articles
+  ai_stance: skeptical_tool_user
+
+article:
+  identity:
+    day: 02
+    type: reflective_opinion
+    title_prefix: "Day 02"
+    theme: On writing good documentation
+
+  disclosure:
+    mandatory: true
+    placement: after_tldr
+    wording: canonical_frozen
+
+  intent:
+    primary:
+      - Discuss the value and types of good documentation
+      - Explain how consistency and templating has helped
+      - Discuss what change of perspective has helped me write better documents
+    secondary:
+      - Demonstrate disciplined AI usage without hype
+
+  content:
+    problem_context:
+      - Documentation is something developers consider boring and do it badly
+    perspective:
+      - Lack of documentation creates roadblocks in testing and release
+      - Writing documentation after the fact results in entrenching misconceptions
+      - Documentation fails for principally these reasons
+        - Agile and SCRUM are misunderstood to not require documentation (systemic issue)
+        - People treat it as a not-my-problem thing (systemic issue)
+        - It's rarely a deliverable now (systemic issue)
+        - It's treated as an all-or-nothing sometimes
+
+  framework:
+    name: Documentation isn't for now, it's for when you need it
+    metaphor:  The laundry storage approaches. Big pile or neatly folded?
+    components:
+      - name: "Axis: Types of documentation"
+        includes: 
+            - Developer
+            - User
+            - Tester
+            - Designer
+        excludes: []
+        cost_of_ignoring:
+            - Issues with communication
+            - Later is sometimes never
+            - Disjoint understanding or implementation
+      - name: "Axis: For whom it is"
+        includes: 
+            - Self now
+            - Self in the future
+            - Others that are technical
+            - End users
+        excludes: []
+        cost_of_ignoring: 
+            - It becomes harder to write documentation "later" because you forgot
+            - Future self notes require work from current self
+      - name: Depth and style of documentation
+        includes: 
+            - Disjoint notes in a big file
+            - Recording of sessions
+            - Follow one of many documentation standards (META:{give links of documentation styles as example})
+            - Start with 0 assumptions, put in every detail and assumption
+
+  Real-world example:
+    scenario:
+      description: Returning to a challenging project
+      background: 
+        - I was assigned testing for the work of a team that wouldn't provide documentation
+        - The team was practicing the "I'll just show you how it works" approach
+        - There was a circular logical fallacy in their approach 
+        - Fallacy stage one, they wouldn't provide their lab step-by-step, saying we should mimic customer setup
+        - Fallacy stage two, they wouldn't provide generic instructions, they would simply demo their setup
+      problems_that_arose:
+        - Turns out they didn't explain key limitations of their product
+        - There were a lot of unstated assumptions, that collapsed when moving to an independent setup
+      what i did:
+        - Painstakingly documented every information I got in a small personal file
+        - Created a shared document in team's formal documentation tool
+        - Started from zero and recorded those steps and assumptions in the formal documentation
+      how it helped:
+        - When reassigned testing six months down the line I didn't remember anything
+        - The documentation allowed me to go an 80% of the way avoiding interactions with a problematic  team
+        - Others could take up testing without need for extensive handouts and watching videos
+  my approach:
+    scenario: 
+      description: How I approach documentation
+      background: 
+        - The first time I was laid-off I realized that I left others one big pile
+        - The company ended-up changing my layoff to an internal move, so I had to interact with the colleagues still (META:{describe feeling slight shame, couldn't take pride in my work})
+      resolution:
+        - Treat every day of work as potentially last
+        - Follow a "small pile of laundry, then put in place" approach to documentation
+        - I keep the immediate work tracked in a simple file that is not well organized
+        - I then do a bottom-up rewrite where I record steps from clean state and record my assumptions clearly
+    benefits:
+        - Repetition makes one better at it
+        - near-zero handover effort
+  closing thoughts:
+    - AI changes things in terms of doing the cleanup and structuring
+    - The "enthusiastic junior" approach must still be taken with AI
+    - We should also introduce another type of documentation, AI guidance
+    - Documentation isn't wasted time, it's reflection time
+    - Trying to explain something can reveal issues
+
+meta:
+  writing:
+    format: markdown
+    governing_ruleset: RIS_v2_2
+    tone:
+      - conversational
+      - reflective
+      - skeptical
+    changes:
+      - use passive voice more
+      - reduce "I" as much as possible without losing tone
+
+  linkedin_shortening:
+    required: true
+    variants:
+      - short
+      - medium
+  in text markers:
+    start of marker : "META:{"
+    end of marker: "}"
