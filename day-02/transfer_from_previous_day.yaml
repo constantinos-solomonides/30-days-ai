@@ -1,0 +1,229 @@
+context_version: 1.0
+context_name: ai_skeptical_30_day_experiment
+author: Constantinos Solomonides
+created_from_conversation: true
+
+authority:
+  precedence:
+    - this_context
+    - custom_RIS
+    - per_day_yaml
+    - platform_rules
+  modification_policy:
+    - Changes must be explicit and intentional
+    - Assumptions here are not to be re-litigated unless requested
+
+experiment:
+  name: 30-days-ai-articles
+  duration_days: 30
+  purpose:
+    - Evaluate productive use of AI under real constraints
+    - Demonstrate informed, disciplined AI usage for writing and development
+    - Build portfolio artifacts transparently
+  non_goals:
+    - AI evangelism
+    - Productivity hype
+    - Claiming AI replaces expertise
+
+ai_stance:
+  position: skeptical_tool_user
+  framing:
+    metaphor: enthusiastic_junior
+    description: >
+      AI is treated as a fast, helpful, and fallible collaborator.
+      Its output is never authoritative and always subject to review.
+  trust_model:
+    - trust_initial_output: conditional
+    - verify_everything: required
+    - accountability: human_only
+
+ai_usage_policy:
+  models:
+    - paid_openai
+    - local_models
+    - online_models
+  pareto_principle:
+    enabled: true
+    target_completion_ratio: 0.8
+    explanation_link: https://en.wikipedia.org/wiki/Pareto_principle
+    interpretation: >
+      Getting ~80% of the draft or scaffold is acceptable.
+      Editing, correction, and responsibility remain human.
+  allowed_uses:
+    - drafting
+    - scaffolding
+    - recall
+    - exploration
+    - summarization
+  forbidden_uses:
+    - final_decision_making
+    - correctness_authority
+    - unverified_generation
+
+publishing:
+  platforms:
+    - blog
+    - linkedin
+    - other
+  cross_platform_assumption: no_shared_context
+  series_metadata_document: forbidden
+  rationale: >
+    Articles and posts may circulate independently.
+    Disclosure must travel with the content.
+
+series_disclosure:
+  mandatory: true
+  placement: after_tldr
+  canonical_markdown: |
+    ### Series Disclosure
+
+    *This article is part of a 30-day experimental series where I deliberately use the paid version of OpenAI to write articles and generate shortened LinkedIn posts. I use a Pareto approach: getting roughly 80% of the draft is acceptable, and I then edit and correct the result (see the [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle)).*
+
+    *I’m AI-skeptical in the sense that I consider AI a useful tool, but not what industry hype often claims it to be. I treat it like an enthusiastic junior: it can produce solid results when properly guided and reviewed, but it can create serious problems if allowed to operate without supervision.*
+
+    *Alongside writing, I’m also using a mix of local and online AI models to rebuild scaled-down versions of older projects I previously worked on in enterprise settings. I’m choosing older projects on purpose: they give me a baseline that makes it easier to assess what AI actually changes in the development workflow and in the final outcomes.*
+
+    #### Repository and Artifacts
+
+    The articles, prompts, intermediate drafts, and related artifacts for this series are publicly available here:
+    https://github.com/constantinos-solomonides/30-days-ai-articles
+
+writing_governance:
+  ris:
+    name: Writing Style & Structure RIS
+    version: 2.2
+    principles:
+      - reusable_mental_model_required
+      - explicit_tradeoffs_required
+      - non_prescriptive
+      - conversational_non_mechanical
+      - ai_skeptical
+    required_sections_order:
+      - TL;DR
+      - Series Disclosure
+      - Why You Should Read This
+      - Narrative Introduction
+      - Framework Definition
+      - Application Example
+      - Reflection & Invitation
+
+  lints:
+    mechanical_smell:
+      description: >
+        Detects writing that satisfies structure but reads like compliance.
+      triggers:
+        - predictable_section_transitions
+        - framework_overexposure
+        - checklist_voice
+        - sentences_existing_only_for_rules
+      failure_rule: two_or_more_triggers_fail
+
+    disclosure_presence:
+      type: hard_fail
+      description: >
+        Missing or altered disclosure invalidates the article.
+
+    hype_leakage:
+      description: >
+        Any implication of inevitability, exceptionalism,
+        or unbounded productivity gains fails validation.
+
+linkedin_policy:
+  required: true
+  applies_to_all_articles: true
+  generation_method: ai_assisted
+  constraints:
+    tone:
+      - skeptical
+      - non_promotional
+      - matter_of_fact
+    forbidden:
+      - hype_language
+      - emojis
+      - universal_claims
+      - marketing_hooks
+  required_elements:
+    - explicit_ai_usage_statement
+    - pareto_principle_reference
+    - link_to_full_article
+    - link_to_repository_or_demo
+  placeholders_required:
+    - "[LINK_TO_FULL_ARTICLE]"
+    - "[LINK_TO_REPOSITORY_OR_DEMO]"
+
+artifacts:
+  repository:
+    url: https://github.com/constantinos-solomonides/30-days-ai-articles
+    contents:
+      - day_yaml
+      - article_markdown
+      - linkedin_post
+      - prompts
+      - ai_drafts
+      - edits
+      - ci_validation
+
+ci_validation:
+  enabled: true
+  enforced_checks:
+    - yaml_schema_compliance
+    - article_section_order
+    - canonical_disclosure_match
+    - linkedin_post_presence
+    - linkedin_placeholders_presence
+    - forbidden_series_metadata_absence
+
+comparison_and_learning:
+  enabled: true
+  purpose: >
+    Allow comparison between AI-generated outputs and
+    the human-edited, publicly posted versions.
+
+  comparison_units:
+    article:
+      ai_initial_output:
+        storage: artifacts/ai_drafts
+        hash_required: true
+      human_final_version:
+        storage: articles
+        hash_required: true
+      comparison_metrics:
+        - structural_changes
+        - semantic_drift
+        - tone_shift
+        - constraint_violations_fixed
+        - errors_introduced_or_removed
+
+    linkedin_post:
+      ai_initial_output:
+        storage: artifacts/ai_drafts
+        hash_required: true
+      human_final_version:
+        storage: linkedin
+        hash_required: true
+      comparison_metrics:
+        - length_delta
+        - hype_reduction
+        - clarity_changes
+
+  feedback_loop:
+    allowed_updates:
+      - adjust_future_prompts
+      - adjust_templates
+      - adjust_lints
+    forbidden_updates:
+      - retroactive_claim_changes
+      - weakening_disclosure
+
+assistant_instructions:
+  behavior:
+    - Assume this context is authoritative
+    - Do not simplify away constraints
+    - Do not promote AI
+    - Ask clarification only on conflict
+  allowed_tasks:
+    - generate_articles_under_ris
+    - generate_linkedin_posts
+    - generate_or_update_yaml
+    - extend_ci_validators
+    - analyze_differences_between_versions
