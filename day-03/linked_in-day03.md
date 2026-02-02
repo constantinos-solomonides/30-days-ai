@@ -1,19 +1,16 @@
 # AI Day 03 — Agentic Freedom vs Operational Safety
 
-Most AI demos assume you’re fine giving an agent broad access and letting it “figure things out”.
+Most AI demos assume you're fine giving an agent broad access and letting it "figure things out".
 
-I’m not.
+I'm not.
 
-On **Day 03 of The Pareto Line**, I built an **AI-assisted Vim sandbox** with the opposite bias:
+On Day 03 of "The Pareto Line series", I built an **AI-assisted Vim sandbox** with the opposite bias:
 tight isolation, explicit constraints, and no unsupervised execution.
 
-That created a clear trade-off:
-
-**Agentic freedom**
-→ speed through unrestricted iteration
-
-**Operational safety**
-→ friction through boundaries, mounts, and human approval
+Between
+**Agentic freedom**  → speed through unrestricted iteration
+and
+**Operational safety**  → friction through boundaries, mounts, and human approval
 
 I chose safety.
 
@@ -23,12 +20,12 @@ The AI produced usable scaffolding, but also:
 - masked its own work via bind mounts
 
 The result?
-- effort roughly matched the 20/80 rule
-- no clear win over existing boilerplate
-- but many hidden assumptions surfaced
+- My effort vs results roughly matched the 20/80 rule
+- No clear win over using existing boilerplate
+- I got to see new-ish approaches to a problem I knew how to solve
 
-The real cost wasn’t AI vs no AI.
-It was **writing code vs reading and validating generated code**.
+The real change wasn't AI vs no AI.
+It was **reading and validating generated code instead of writing it**. And that may be where AI use causes the big issues.
 
 📄 Full article:
 - Substack 👉 https://open.substack.com/pub/csolomonides/p/day-03-building-an-ai-assisted-vim?r=1g7elm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
@@ -36,4 +33,4 @@ It was **writing code vs reading and validating generated code**.
 
 📁 Repo 👉 https://github.com/constantinos-solomonides/30-days-ai
 
-Next: **Day 04 — does this environment earn its complexity?**
+Next: **Day 04 — Putting the environment to the test**
