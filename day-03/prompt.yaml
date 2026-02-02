@@ -6,9 +6,9 @@ prompt:
 
   repositories:
     - url: "https://github.com/constantinos-solomonides/pytest-framework-example"
-      role: "tracking artifacts, experiments, and reference implementations"
+      role: "tracking AI-assisted implementation"
     - url: "https://github.com/constantinos-solomonides/30-days-ai"
-      role: "Repository tracking this article series"
+      role: "Repo holding each day of progress with articles"
 
   source_context:
     scope:
@@ -42,8 +42,8 @@ prompt:
       - "Several fixes required manual intervention"
       - "Solutions often emerged only after copying exact error output"
       - "Unsupervised execution paths would have left the system hanging"
-      - "There is at least **some** domain-knowledge blindess, as senior engineers tend to ask different question than
-        everyday users"
+      - "There is **some** domain blindness, as a senior SW engineer was prompting"
+      - "A lot of the assumptions made are not everyday-user defaults"
 
     evaluation:
       effort_assessment:
@@ -65,6 +65,7 @@ prompt:
       - "Corrected incorrect assumptions (autoload, UID safety, filesystem layout)"
       - "Applied fixes manually when automation fell short"
       - "Evaluated outcome critically against existing boilerplate"
+      - "Did last 20% of corrections to get it running"
 
   article_objective:
     goal: >
@@ -88,7 +89,7 @@ prompt:
     - implementation_attempt
     - issues_and_failures
     - debugging_and_corrections
-    - evaluation_against_existing_boilerplate
+    - comparison_with_reusing_existing_boilerplate
     - lessons_learned
     - next_steps
 
