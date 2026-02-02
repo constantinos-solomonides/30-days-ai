@@ -4,9 +4,11 @@ prompt:
   experiment: "30 day AI experiment"
   conversation_name: "30 day AI experiment – day 03"
 
-  repository:
-    url: "https://github.com/constantinos-solomonides/pytest-framework-example"
-    role: "tracking artifacts, experiments, and reference implementations"
+  repositories:
+    - url: "https://github.com/constantinos-solomonides/pytest-framework-example"
+      role: "tracking artifacts, experiments, and reference implementations"
+    - url: "https://github.com/constantinos-solomonides/30-days-ai"
+      role: "Repository tracking this article series"
 
   source_context:
     scope:
@@ -40,6 +42,8 @@ prompt:
       - "Several fixes required manual intervention"
       - "Solutions often emerged only after copying exact error output"
       - "Unsupervised execution paths would have left the system hanging"
+      - "There is at least **some** domain-knowledge blindess, as senior engineers tend to ask different question than
+        everyday users"
 
     evaluation:
       effort_assessment:
@@ -99,3 +103,4 @@ prompt:
       - real failure modes
       - cost vs benefit
       - learning value over polish
+  day 04 topic: Put environment to use and debug it
