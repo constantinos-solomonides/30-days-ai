@@ -1,0 +1,67 @@
+{
+  "conversation_id": "ai_experiment_portfolio_preparation_01",
+  "project": "ai_experiment",
+  "conceptual_tags": [
+    "ai experiment",
+    "portfolio",
+    "preparation",
+    "01"
+  ],
+  "scope": "Local AI-assisted Vim development environment using Docker and Ollama without exposing host filesystem",
+  "initial_goal": "Create a containerized Vim environment with local AI coding assistance, fully isolated from host filesystem, suitable for portfolio use",
+  "final_direction": {
+    "editor": "Vim",
+    "ai_plugin": "vim-ollama",
+    "llm_backend": "Ollama (local)",
+    "model": "qwen2.5-coder:7b",
+    "execution_mode": "CPU-only",
+    "isolation": [
+      "Docker containers",
+      "Single bind-mounted workspace",
+      "Persistent Vim config via volume",
+      "Internal Docker network only"
+    ]
+  },
+  "key_decisions": [
+    "Abandoned vim-ai due to OpenAI-centric design and API key assumptions",
+    "Switched to vim-ollama for native Ollama support",
+    "Used Docker Compose for reproducibility",
+    "Avoided GPU usage due to legacy NVIDIA GM108M",
+    "Explicitly limited RAM and model size for laptop safety"
+  ],
+  "major_issues_encountered": [
+    "vim-ai missing API key errors",
+    "Ollama endpoint misunderstandings",
+    "Vim Python module resolution issues",
+    "requests/jinja2 ModuleNotFoundError despite installation",
+    "Mismatch between Vim embedded Python and system Python paths"
+  ],
+  "resolutions": [
+    "Validated Ollama REST API via /api endpoints",
+    "Ensured Vim compiled with +python3 support",
+    "Installed Python dependencies via apt and pip",
+    "Explicit Python host configuration",
+    "Identified vim-ollama execution model limitations in containers"
+  ],
+  "current_state": {
+    "status": "environment mostly functional but fragile",
+    "remaining_risk": "vim-ollama Python environment coupling in minimal containers",
+    "recommended_future_step": "Switch to Neovim or rebuild Vim against system Python for full stability"
+  },
+  "portfolio_guidance": {
+    "recommended_use": [
+      "AI-assisted refactoring",
+      "Test scaffolding",
+      "Code review and explanation"
+    ],
+    "disclosure_file": "AI_USAGE.md",
+    "positioning": "Human-in-the-loop AI assistance, not autonomous generation"
+  },
+  "reference_usage": {
+    "suggested_reference": "ai_experiment \u2192 ai experiment, portfolio, preparation, 01",
+    "machine_reference": {
+      "project": "ai_experiment",
+      "tag": "ai experiment, portfolio, preparation, 01"
+    }
+  }
+}
