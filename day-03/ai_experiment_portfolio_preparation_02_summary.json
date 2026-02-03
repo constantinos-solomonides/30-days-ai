@@ -1,0 +1,51 @@
+{
+  "conversation_name": "30 day AI experiment - day 03",
+  "conceptual_tags": [
+    "ai experiment",
+    "portfolio",
+    "preparation",
+    "02"
+  ],
+  "project": "ai_experiment",
+  "ris_status": {
+    "active": true,
+    "version": "RIS v1",
+    "authoritative": true
+  },
+  "primary_objective": "Design and deliver a Docker-based Vim sandbox with AI integration while preventing direct exposure of the host filesystem.",
+  "artifacts_generated": [
+    {
+      "type": "archive",
+      "name": "vim-ai-sandbox.zip",
+      "description": "Complete Docker environment including Vim container, Ollama sidecar, LiteLLM proxy, Open WebUI, vimrc, scripts, README, and persistence directories."
+    }
+  ],
+  "technical_requirements": {
+    "container_runtime": "Docker + docker-compose",
+    "filesystem_strategy": "Bind-mounted directories (./persist) instead of Docker volumes",
+    "user_mapping": "Container user UID/GID must match host",
+    "ai_stack": [
+      "Ollama (local LLM)",
+      "LiteLLM (OpenAI-compatible proxy)",
+      "Open WebUI (optional interface)"
+    ],
+    "editor": "Vim with leader key set to backslash",
+    "persistence_targets": [
+      "home",
+      "workspace",
+      "ollama models",
+      "webui data"
+    ]
+  },
+  "security_posture": [
+    "Host home directory not mounted",
+    "Projects only exposed via explicit copy into workspace",
+    "AI operates inside Docker network unless remote providers are configured"
+  ],
+  "state_changes": [
+    "RIS applied globally to future chats",
+    "Conversation tagged",
+    "Conversation associated with ai_experiment project"
+  ],
+  "generated_at_utc": "2026-02-02T13:48:58.364915+00:00"
+}
