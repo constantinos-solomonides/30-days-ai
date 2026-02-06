@@ -4,7 +4,7 @@ article:
     subtitle: "a 30-day experiment in AI use"
     day: "05 & 05.5"
 
-  title: "AI Day 05 & 05.5 — Pause and a Step Back"
+  title: "AI Day 05 & 05.5 — A pause and a Step Back"
 
   role:
     author_voice: first_person
@@ -54,12 +54,20 @@ article:
       - necessity to read OpenHands and LiteLLM documentation directly
 
     behavioral_analysis:
-      - AI defaults to being too helpful
-      - completion prioritized over compliance
+      - AI defaults to being too helpful and sycophantic
+      - completion prioritized over compliance, even if it led to hallucinations
       - small violations accumulated into major friction
 
     cost_analysis:
+      motivation: Examine the costs of running
+      types of costs:
+        - Buy sufficiently powerful machine
+        - Run everything online
       online_agents:
+        caveats:
+          - The calculations below were given by chatgpt, they could not be verified independently from online sources
+          - super-cheap models also exist, they are down by at least an order of scale, sometimes two. However it is
+            unsure if meaningful to integrate them in a production workflow
         assumptions:
           hours_per_day: 8
           days_per_month: 30
@@ -76,10 +84,17 @@ article:
         obsolescence_horizon:
           practical_years: "2–3"
           parity_loss_months: "<18"
+        additional points:
+          - As demand for hardware increases so do prices go up
+          - Companies are currently in a discovery / research phase.
+          - Prices will go up once return-of-investment is expected and providers still in the game are fewer
+          - Article to come later in the series, without specific date about how this happened with multiple
+            technologies like cloud etc.
+          - Examples of software development via iterative agent use costs in tokens or money not readily available
 
     decisions:
       - shift AI role from agent to tooling
-      - adopt 60/40 AI-to-human effort split for week 2
+      - adopt 60/40 AI-to-human effort split for week 2 (use future tense)
 
     conclusions:
       - tools did not fail; expectations did
@@ -101,6 +116,7 @@ article:
       - cost_estimates_with_calculations
       - links
       - continuity_hook
+      - disclosure_footer
 
   style_constraints:
     avoid:
@@ -112,13 +128,16 @@ article:
       - roughness_where_reflective
       - explicit_uncertainty
       - cause_effect_reasoning
+    formatting:
+      - prefer more natural paragraphs with variable length sentences
+      - prefer prose over lists, unless technical listings
 
   links:
     project:
       - title: "The Pareto Line — 30-day AI experiment (project repository)"
-        url: "https://github.com/constantinos-solomonides/30-days-ai-articles"
+        url: "https://github.com/constantinos-solomonides/pytest-framework-example"
       - title: "Articles archive (prompts, drafts, and published versions)"
-        url: "https://github.com/constantinos-solomonides/30-days-ai-articles/tree/main/articles"
+        url: "https://github.com/constantinos-solomonides/30-days-ai-articles"
     pricing:
       - title: "OpenAI API Pricing (official)"
         url: "https://openai.com/api/pricing/"
@@ -133,6 +152,11 @@ article:
         url: "https://docs.ollama.com/faq"
       - title: "VRAM requirements for running local LLMs with Ollama"
         url: "https://localllm.in/blog/ollama-vram-requirements-for-local-llms"
+      - title: "Reddit post, \"why do multiple AI agents consume so many tokens compared to working without agents?\""
+        url: "https://www.reddit.com/r/ClaudeAI/comments/1pq3bu2/why_do_multiple_ai_agents_consume_so_many_more/"
+      - title: "Agent IQ: Build and Test AI Agents for Scale"
+        url: "https://www.ischool.berkeley.edu/projects/2025/agent-iq-build-and-test-ai-agents-scale"
+        purpose: "An example of actual token cost for task with given duration"
 
   continuity_hook:
     next_days:
