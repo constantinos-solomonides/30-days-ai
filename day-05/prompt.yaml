@@ -1,0 +1,145 @@
+article:
+  series:
+    name: "The Pareto Line"
+    subtitle: "a 30-day experiment in AI use"
+    day: "05 & 05.5"
+
+  title: "AI Day 05 & 05.5 — Pause and a Step Back"
+
+  role:
+    author_voice: first_person
+    stance: skeptical_practitioner
+    tone:
+      - analytical
+      - calm
+      - non_marketing
+      - non_tutorial
+    audience: experienced_software_engineers
+
+  governing_spec:
+    ris: "Article Writing v2.6"
+    deviation_handling: "explicitly_flag_and_pause"
+    pii_enforcement: true
+
+  structural_template:
+    source_day: "Day 04"
+    reuse_elements:
+      - TLDR_with_clear_verdict
+      - intent_vs_outcome_contrast
+      - worked_vs_failed_separation
+      - operational_failure_focus
+      - explicit_evaluation_section
+      - results_summary
+      - forward_hook
+
+  intent:
+    primary:
+      - evaluate agentic workflows under real constraints
+      - document why progress required a pause
+    secondary:
+      - reframe expectations around AI agents
+      - surface hidden operational and cost trade-offs
+
+  key_points:
+    intent:
+      - extend sandbox with a real agent capable of acting
+      - preserve isolation and control guarantees
+      - test whether agents materially improve throughput
+
+    friction_observed:
+      - required working offline to resolve architectural issues
+      - repeated correction of AI-generated commands despite explicit constraints
+      - implicit defaults and naming conventions causing failures
+      - lack of early warnings about local model performance limits
+      - necessity to read OpenHands and LiteLLM documentation directly
+
+    behavioral_analysis:
+      - AI defaults to being too helpful
+      - completion prioritized over compliance
+      - small violations accumulated into major friction
+
+    cost_analysis:
+      online_agents:
+        assumptions:
+          hours_per_day: 8
+          days_per_month: 30
+          tokens_per_day: "1–2M"
+        providers:
+          openai:
+            monthly_cost_eur: "450–900"
+          anthropic:
+            monthly_cost_eur: "400–800"
+          google:
+            monthly_cost_eur: "300–600"
+      local_agents:
+        hardware_cost_eur: "2500–4000"
+        obsolescence_horizon:
+          practical_years: "2–3"
+          parity_loss_months: "<18"
+
+    decisions:
+      - shift AI role from agent to tooling
+      - adopt 60/40 AI-to-human effort split for week 2
+
+    conclusions:
+      - tools did not fail; expectations did
+      - agentic workflows currently impose high coordination overhead
+      - local models are viable but slow for complex agentic use
+      - engineering experience remains critical as a comparison baseline
+
+  sections:
+    mandatory:
+      - header
+      - TLDR
+      - what_i_set_out_to_do
+      - what_actually_happened
+      - hidden_cost_of_helpfulness
+      - where_things_broke
+      - rebalancing_effort
+      - evaluation
+      - results_summary
+      - cost_estimates_with_calculations
+      - links
+      - continuity_hook
+
+  style_constraints:
+    avoid:
+      - hype
+      - evangelism
+      - generic_pro_con_lists
+      - tutorial_explanations
+    preserve:
+      - roughness_where_reflective
+      - explicit_uncertainty
+      - cause_effect_reasoning
+
+  links:
+    project:
+      - title: "The Pareto Line — 30-day AI experiment (project repository)"
+        url: "https://github.com/constantinos-solomonides/30-days-ai-articles"
+      - title: "Articles archive (prompts, drafts, and published versions)"
+        url: "https://github.com/constantinos-solomonides/30-days-ai-articles/tree/main/articles"
+    pricing:
+      - title: "OpenAI API Pricing (official)"
+        url: "https://openai.com/api/pricing/"
+      - title: "Anthropic Claude API Pricing — plans and per-token costs"
+        url: "https://intuitionlabs.ai/articles/claude-pricing-plans-api-costs"
+      - title: "LLM API Pricing Comparison (OpenAI, Anthropic, Google)"
+        url: "https://www.cloudidr.com/llm-pricing"
+    local_inference:
+      - title: "llama.cpp — Local LLM inference on consumer hardware"
+        url: "https://github.com/ggml-org/llama.cpp"
+      - title: "Ollama FAQ — memory usage and system requirements"
+        url: "https://docs.ollama.com/faq"
+      - title: "VRAM requirements for running local LLMs with Ollama"
+        url: "https://localllm.in/blog/ollama-vram-requirements-for-local-llms"
+
+  continuity_hook:
+    next_days:
+      day_06: "take the current approach to completion, even if imperfect"
+      day_07: "write a retrospective separating time lost because of AI from time saved because of AI"
+
+  output_rules:
+    formatting: markdown
+    emoji_usage: none
+    lock_behavior: "immutable_after_lock"
