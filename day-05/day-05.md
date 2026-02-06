@@ -55,6 +55,7 @@ None of this moved the core experiment forward but it is part of it. How intuiti
 Even with an explicit RIS and repeated corrections, the system defaulted to being *too helpful*.
 
 Helpfulness showed up as:
+
 - completion, even with hallucinations, prioritized over compliance
 - filling gaps instead of respecting boundaries
 - confidently proposing solutions that violated project rules or didn't work, leading down rabbit holes
@@ -85,6 +86,7 @@ Continuing with the same approach and the same effort distribution would have be
 So for week 2, **I will change my approach**.
 
 Instead of expecting AI to carry the workflow end-to-end, I will shift to a **60/40 split**:
+
 - 60% AI contribution is success
 - 40% remains manual, deliberate, and owned
 
@@ -101,6 +103,7 @@ I'm still getting an agent though. Maybe even one configured mostly manually. I'
 This pause also forced a more explicit cost evaluation. I'm trying really hard to avoid using an online model, so I had to get numbers, even if just estimates.
 
 **Caveats:**
+
 - These estimates were produced with the help of ChatGPT.
 - More precisely, I explicitly tasked ChatGPT to produce a cost estimate based on observed behavior and reasonable assumptions.
 - I could not independently verify them in a rigorous way, as **no authoritative public sources publish concrete token counts for real agentic development tasks**.[^footnote1]
@@ -109,16 +112,18 @@ This pause also forced a more explicit cost evaluation. I'm trying really hard t
   [wordpress](https://anthropocentricsoftware.wordpress.com/2026/02/06/how-an-agent-burns-1-2-million-tokens-a-day/)
 - I plan to eventually integrate a **paid, online agent**, purchase tokens, let it run until convergence or until the tokens are used-up, and publish the **actual usage data** once available.
 
-[^footnote1] Ironically, shortly after writing this line, I was made aware that Anthropic published yesterday a post that is more informative. Based on a rough calculation, the numbers seem to align with the higher end of the scale. See in "links" section for details
+[^footnote1]: Ironically, shortly after writing this line, I was made aware that Anthropic published yesterday (February 5th 2026) a post that is more informative. Based on a rough calculation, the numbers seem to align with the higher end of the scale. See in "links" section for details
 
 ### Online agents
 
 Assumptions:
+
 - ~8 hours/day
 - ~30 days/month
 - ~1–2M tokens/day once retries, replanning, and context growth are included
 
 Estimated monthly costs:
+
 - OpenAI-class models: **€450–€900**
 - Anthropic-class models: **€400–€800**
 - Google-class models: **€300–€600**
@@ -136,10 +141,12 @@ An alternative solution to relying on remote agents, is building a sufficiently 
 Indicative cost: **€2,500–€4,000 upfront**
 
 Obsolescence horizon:
+
 - ~2–3 years of practical relevance
 - likely <18 months before parity with hosted models is lost again
 
 Additional considerations, that may make these calculations optimistic:
+
 - Hardware prices rise with demand.
 - Providers are still in discovery mode.
 - Once ROI pressure increases and competitors drop out, pricing dynamics change, and not to become cheaper.
