@@ -168,7 +168,17 @@ The process is still enjoyable. The learning curve is real.
 
 This is something I fear use of AI takes away. Many of the things we learnt and applied to our work came from mucking around for fun. As always, there's an XKCD comic for that
 
-[!Usefulness in my career](!https://imgs.xkcd.com/comics/11th_grade.png)
+![Usefulness in my career](https://imgs.xkcd.com/comics/11th_grade.png "XKCD: Usefulness in my career")
+
+
+---
+
+## Links
+
+### Project & Articles
+- **Experiment repository on** [**github**](https://github.com/constantinos-solomonides/pytest-framework-example)
+- **Articles & prompts repository on** [**github**](https://github.com/constantinos-solomonides/30-days-ai-articles)
+- [**XKCD "11th grade"**](https://xkcd.com/519/)
 
 ------------------------------------------------------------------------
 
