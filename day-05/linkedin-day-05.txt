@@ -1,0 +1,41 @@
+AI Day 05 & 05.5 — pause and a step back.
+
+I did everything “right”.
+The sandbox worked.
+Local models worked.
+The agent framework mostly worked.
+
+I still don’t have a local agent doing useful work for me.
+
+This is part of a 30-day experiment on using AI in real development work.
+I haven’t failed. I simply haven’t found what works yet.
+
+No big failure.
+No broken setup.
+Just friction — accumulated friction.
+
+Day 05 was about running a model locally, deploying an agent, and letting it iterate on real tasks. What I learned instead is that once you go past demos, AI is very good at being almost right.
+
+And almost right is expensive.
+
+More corrections than automation.
+More validation than progress.
+More effort keeping things in bounds than moving forward.
+
+That’s not an engineering failure.
+It’s a mismatch of expectations.
+
+So for week 2, I’m changing my approach.
+Less “agent does everything”.
+More AI as tooling.
+A deliberate 60/40 split.
+
+Full article (Day 05 & 05.5):
+https://anthropocentricsoftware.wordpress.com/2026/02/06/ai-day-05-05-5-a-pause-and-a-step-back/
+https://csolomonides.substack.com/p/ai-day-05-and-055-a-pause-and-a-step
+
+Cost breakdown on why agents aren’t cheap:
+https://anthropocentricsoftware.wordpress.com/2026/02/06/how-an-agent-burns-1-2-million-tokens-a-day/
+https://csolomonides.substack.com/p/how-an-agent-burns-12-million-tokens
+
+#AI #AgenticAI #SoftwareEngineering #DeveloperExperience #LLM #HumanInTheLoop #CostOfAI
