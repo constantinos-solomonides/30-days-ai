@@ -1,0 +1,66 @@
+On Day 06, I turned AI off.
+
+Not because it failed. Not because I was frustrated. But because I
+wanted a clean comparison.
+
+This experiment is happening while I’m actively using AI every day. So
+the only way to compare manual vs AI-assisted work fairly is to remove
+AI in the middle of that usage — not after stepping away for a while.
+
+What changed?
+
+The work felt slower. But it felt simpler.
+
+Without suggestions branching in different directions, I debugged the
+way I normally would:
+
+Reduce the request to something trivial. Start at the last node in the
+chain. Increase verbosity. Measure response time. Move step by step.
+
+cURL was fast. Ollama was fast. LiteLLM was fast.
+
+The slowdown came from injected context further up the stack. A simple
+request accumulated extra instructions and constraints along the way.
+The model wasn’t struggling — it was processing unnecessary material.
+
+That was the main takeaway.
+
+AI doesn’t just help. It can also quietly expand scope — and cost — if
+you don’t monitor what gets sent.
+
+I also noticed something else.
+
+A lot of tooling documentation today is AI-generated. It looks
+structured and complete, but it isn’t always optimized for how engineers
+actually read under time pressure. Older documentation often had a
+“rubber duck” quality — the author clarified things while explaining
+them. That effect is harder to see now.
+
+Day 06 did not result in a working sandbox.
+
+It did result in:
+
+• A validated communication pipeline • A cleaner container baseline •
+Removal of an approach that was adding complexity • A clearer
+understanding of where friction was introduced
+
+Manual debugging is linear. AI-assisted debugging is iterative.
+
+Both have trade-offs.
+
+Full article here:
+
+Substack:
+https://csolomonides.substack.com/p/ai-day-06-a-day-of-manual-work
+
+WordPress:
+https://anthropocentricsoftware.wordpress.com/2026/02/12/ai-day-06-a-day-of-manual-work/
+
+Day 07 will focus on measurement — where AI actually saved time, and
+where it didn’t.
+
+------------------------------------------------------------------------
+
+As with the rest of the series, each “day” represents a real workday of
+effort. Posting may be delayed due to normal obligations, but the work
+itself follows the actual timeline.
