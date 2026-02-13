@@ -1,3 +1,4 @@
 *.md filter=anonymize
 *.yaml filter=anonymize
 *.yml filter=anonymize
+*.txt filter=anonymize

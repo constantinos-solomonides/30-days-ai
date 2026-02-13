@@ -1,0 +1,135 @@
+article:
+  series:
+    name: "The Pareto Line"
+    subtitle: "a 30-day experiment in AI use"
+    day: "06"
+
+  title: "AI Day 06 - A day of manual work"
+
+  role:
+    author_voice: first_person
+    stance: skeptical_practitioner
+    tone:
+      - analytical
+      - calm
+      - non_marketing
+      - non_tutorial
+    audience: experienced_software_engineers
+
+  governing_spec:
+    ris: "Article Writing v2.7"
+    deviation_handling: "explicitly_flag_and_pause"
+    pii_enforcement: true
+
+  structural_template:
+    source_day: "Day 05"
+    reuse_elements:
+      - disclaimer
+      - TLDR_with_clear_verdict
+      - intent_vs_outcome_contrast
+      - worked_vs_failed_separation
+      - operational_failure_focus
+      - explicit_evaluation_section
+      - results_summary
+      - disclosure_footer
+      - forward_hook
+
+  disclaimer:
+      - Each "day" in the series tracks a work-day of effort
+      - There was no "cheating" despite the delay in posting, delay was due to important offline-world tasks
+  intent:
+    primary:
+      - work on building the sandbox manually
+    secondary:
+      - compare challenges of working with AI vs working manually
+      - See how much the use of ai has become a habit already
+
+  key_points in debugging:
+    core differences:
+      - human work is more linear than compared to ai
+      - experience allows identifying the issue using targeted approach instead of trying things until something works
+      - The paradox remains that to build a sandbox so AI can be safely used using AI is a pain
+      - **reminder** the build-from-scratch is intentional, otherwise percentage of human vs AI effort would be masked
+
+    additional_challenges:
+      - AI tools also generate documentation with AI
+      - Chatbot helpers are useful
+      - The automatically-built structure is sub-par
+      - The documentation does not take human limitations sufficiently into account
+
+    approach:
+     - Go from end-to-start, verify communication works
+     - Compare times between any two points
+     - Increase verbosity to identify issue
+     - Use simple request "say hi to me"
+
+    outcomes:
+      - connectivity worked OK
+      - cURL gets a response adequately fast for simple requests
+      - OpenHands introduces **a lot** of useless context (RIS) when making the request, this causes the delay
+
+    conclusions:
+      - Openhands introducing unsolicited content is a good example of ai bloat
+      - Iteration with paid-for AI agents would have been way more expensive without visibility
+      - Blind trust in tools remains a bad idea
+
+    next_steps_and_outcomes:
+      - Introduced a simple Ubuntu container that can be rebuilt as needed
+      - First search led to use of 'openclaw' -> Not the right choice, better for chat etc
+      - openclaw documentation suffers from the 'not optimized for humans' mentioned above
+      - started work on integrating opencode instead
+    wrap_up:
+      - Still no local ai agent created
+      - **important** this is fun and a learning experience
+      - **important** this resembles past experience that gave me useful knowledge applied to work
+      - This is not a failure, as it allows the experiment to advance
+      - more details tomorrow with summary
+      - The fact that real-world can take away from progress is an argument for using agents. No idle time when busy
+
+  sections:
+    mandatory:
+      - header
+      - TLDR
+      - what_i_set_out_to_do
+      - what_actually_happened
+      - hidden_cost_of_helpfulness
+      - where_things_broke
+      - rebalancing_effort
+      - evaluation
+      - results_summary
+      - cost_estimates_with_calculations
+      - links
+      - continuity_hook
+      - disclosure_footer
+
+  style_constraints:
+    avoid:
+      - hype
+      - evangelism
+      - generic_pro_con_lists
+      - tutorial_explanations
+    preserve:
+      - roughness_where_reflective
+      - explicit_uncertainty
+      - cause_effect_reasoning
+    formatting:
+      - prefer more natural paragraphs with variable length sentences
+      - prefer prose over lists, unless technical listings
+
+  links:
+    project:
+      - title: "The Pareto Line — 30-day AI experiment (project repository)"
+        url: "https://github.com/constantinos-solomonides/pytest-framework-example"
+      - title: "Articles archive (prompts, drafts, and published versions)"
+        url: "https://github.com/constantinos-solomonides/30-days-ai-articles"
+      - meta: add link to openclaw
+      - meta: add link to opencode
+
+  continuity_hook:
+    next_days:
+      day_07: "write a retrospective separating time lost because of AI from time saved because of AI"
+
+  output_rules:
+    formatting: markdown
+    emoji_usage: none
+    lock_behavior: "immutable_after_lock"

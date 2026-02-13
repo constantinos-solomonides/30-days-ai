@@ -1,0 +1,69 @@
+AI Day 06 - A day of manual work
+
+Day 06 was the day I worked without using AI
+
+Because playing the role of agent manually was draining;
+and because I wanted to compare how work goes on when done manually
+
+This experiment is about actively using AI every day. But trying to have AI
+build me a working sandbox takes too much time. So, as I am forced to downgrade my
+expectations repeatedly, I decided to have a day of manual work.
+
+What changed?
+
+Doing things took more time. But the progress was linear.
+
+Without suggestions branching in different directions, I debugged the
+way I normally would:
+
+Reduce the request to something trivial. Start at the last node in the
+chain. Increase verbosity. Measure response time. Move step by step.
+
+Turns out that Ollama was fast enough. LiteLLM was fast enough. Openhands added bloat.
+
+A simple request was sent with too many extra instructions and constraints.
+The model wasn't struggling - it was processing unnecessary material.
+
+That was the main takeaway.
+
+AI doesn't just help. It can also quietly expand scope - and cost - if
+you don't monitor what gets sent.
+
+I also noticed something else.
+
+A lot of tooling documentation today is AI-generated. It looks
+structured and complete, but it isn't always optimized for how engineers
+actually read under time pressure. Older documentation often had a
+"rubber duck" quality - the author clarified things while explaining
+them. That effect is harder to see now.
+
+Day 06 did not result in a working sandbox.
+
+It did result in:
+
+• A validated communication pipeline
+• A cleaner container baseline
+• Removal of an approach that was adding complexity
+• A clearer understanding of where friction was introduced
+
+Manual debugging is linear. AI-assisted debugging is iterative.
+
+Both have trade-offs. Both have benefits.
+
+Full article here:
+
+Substack:
+https://csolomonides.substack.com/p/ai-day-06-a-day-of-manual-work
+
+WordPress:
+https://anthropocentricsoftware.wordpress.com/2026/02/12/ai-day-06-a-day-of-manual-work/
+
+Day 07 will focus on a retrospective - where AI actually saved time, and where it didn't.
+
+------------------------------------------------------------------------
+
+As with the rest of the series, each "day" represents a real workday of
+effort. Posting may be delayed due to normal obligations, but the work
+itself follows the actual timeline.
+#AI #AgenticAI #SoftwareEngineering #DeveloperExperience #LLM #HumanInTheLoop #CostOfAI
+U
