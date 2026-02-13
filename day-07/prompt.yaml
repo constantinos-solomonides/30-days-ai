@@ -1,0 +1,159 @@
+article:
+  series:
+    name: "The Pareto Line"
+    subtitle: "a 30-day experiment in AI use"
+    day: "07"
+
+  title: "AI Day 07 - First week's retrospective"
+
+  role:
+    author_voice: first_person
+    stance: skeptical_practitioner
+    tone:
+      - analytical
+      - calm
+      - non_marketing
+      - non_tutorial
+    audience: experienced_software_engineers
+
+  governing_spec:
+    ris: "Article Writing v2.7"
+    deviation_handling: "explicitly_flag_and_pause"
+    pii_enforcement: true
+
+  structural_template:
+    source_day: "Day 05"
+    reuse_elements:
+      - TLDR_with_clear_verdict
+      - disclosure_footer
+      - forward_hook
+  intent:
+    primary:
+      - reflect on the progress, the challenges and the benefits of going full-on AI for the first week
+    secondary:
+      - Reflect on the need to step back from AI
+      - Discuss the need to pay for AI and the moral and political implications
+
+  content:
+    introduction:
+      - Recap:
+        - 30 day experiment of maximum use of AI for workflows
+        - Using 20/80 rule, the expectation is to get 80% of the way there by investing 20% of effort for prompt
+        - Using recreation of past-projects as a way to compare then and now
+        - Writing articles from prompts to compare ease of use
+        - Using the cheapest for-paid OpenAI tier
+        - First step is building a sandbox to safely run AI agents from within
+        - Use of ready-made solutions was avoided, as it would mask the AI/manual effort into building the sandbox
+        - >
+          The process follows the reasoning of "bootstrapping" for compilers
+          (https://en.wikipedia.org/wiki/Bootstrapping_\(compilers\))
+      - A smart tool doesn't force you into choosing between safety and efficiency
+
+    premises:
+      - I am not against using any one tool or language
+      - The tools must be used by people who can use them safely
+      - I find the black-and-white approach by colleagues as misguided as the over-hyping by the industry
+      - >
+        "Amara's law (https://www.computer.org/publications/tech-news/trends/amaras-law-and-tech-future)", quote
+        "We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run"
+    summary of the week:
+      - Writing articles from prompts and refinement went well enough
+      - Write LinkedIn posts went well enough
+      - Feeding final product back to ChatGPT to identify differences between output and my writing style
+      - Asking to provide files and scripts for sandbox
+      - End result is no working sandbox yet
+      - Had to do a full-manual day because the iterative approach wasn't converging
+    overall experience:
+      - Paid-for model allows a more uninterrupted flow of work
+      - Writing became faster but it has significant downsides
+      - Linked-in post shortening works well enough
+      - The development process is slow to kickstart
+      - Use of remote agents can rack-up costs very fast, local agents are not so efficient due to processing demands
+    concerns, caveats and pain-points:
+      - writing:
+        - Writing has way less identity / is more generic
+        - The style is that of an annoying, grandiose speaker, and needs to be toned down manually
+        - Even repeated prompts and RSI expansions don't take the salesperson smell away
+        - Articles and links hallucinated frequently, even when told explicitly to search and verify elements
+        - Writing the prompt as a list helps identifying key points and could help significantly with manual writing too
+        - Perhaps difference in speed when doing first-draft-as-bullets with manual writing VS editing not so significant
+      - LinkedIn posts:
+        - Shortening works mostly OK, starts at a ~70% of the final
+        - 70% to 80% takes multiple prompts
+      - Coding:
+        - Weakest part by far
+        - Sycophantic approach is not a good one for developing software
+        - There's a reason `git imperative` is used [Git Commit Styleguide](https://github.com/goodbyekansas/git-commit-styleguide)
+        - Rubber ducks should be silent or skeptical, saying "yes" is counter-productive
+        - It produces complicated solutions, with too much fluff
+        - Reading code is harder than writing it, so a risk there
+        - Had to revert to manual to identify the issue
+        - When acting like an intermediary, it's best to go for the simplest possible approach instead of something big
+      - moral and ethical concerns:
+        - Environmental concerns
+        - Negative impact to the job market
+        - AI does not solve the problems yet, but it's a good excuse
+        - examples:
+          - https://hbr.org/2026/01/companies-are-laying-off-workers-because-of-ais-potential-not-its-performance
+          - https://fortune.com/2026/02/10/ai-washing-and-forever-layoffs-why-companies-keep-cutting-jobs-even-amid-rising-profits/
+          - https://www.cnbc.com/2025/10/19/firms-are-blaming-ai-for-job-cuts-critics-say-its-a-good-excuse.html
+        - Using paid-for AI is supporting companies and indirectly political causes that people may disagree with
+        - AI has nefarious uses, industry improvements improve all use-cases
+        - examples:
+          - https://www.wired.com/story/openai-president-greg-brockman-political-donations-trump-humanity/
+          - https://www.forbes.com/councils/forbestechcouncil/2024/02/02/artificial-intelligence-the-new-eyes-of-surveillance/
+          - https://www.forbes.com/sites/bernardmarr/2024/09/17/how-ai-is-used-in-war-today/
+
+    evaluation of overall experience:
+      - Waiting for working sandbox to form an opinion
+      - Having to do manual work points to experience remaining invaluable
+      - A skilled worker with the right power tool can do way more than fully automated tools
+      - The hype over the recent post by anthropic https://www.anthropic.com/engineering/building-c-compiler glosses over important details
+      - issues with article:
+        - High cost to converge
+        - Still not fully functional output
+        - Was run by a high-level expert
+        - The problem is very well defined
+        - The solution to it was very likely part of the training data used for the agents as it's FOSS
+    closing remarks:
+      - I do believe AI is here to stay
+      - I do plan on incorporating it in my workflow
+      - I do believe we're heading towards an industry, very likely financial, possibly social boom
+      - I plan on going back to the basics and rebuilding my foundation to look under the hood (maths, algorithms etc. for LLMs)
+
+  sections:
+    mandatory:
+      - header
+      - TLDR
+      - continuity_hook
+      - disclosure_footer
+
+  style_constraints:
+    avoid:
+      - hype
+      - evangelism
+      - generic_pro_con_lists
+      - tutorial_explanations
+    preserve:
+      - roughness_where_reflective
+      - explicit_uncertainty
+      - cause_effect_reasoning
+    formatting:
+      - prefer more natural paragraphs with variable length sentences
+      - prefer prose over lists, unless technical listings
+
+  links:
+    project:
+      - title: "The Pareto Line — 30-day AI experiment (project repository)"
+        url: "https://github.com/constantinos-solomonides/pytest-framework-example"
+      - title: "Articles archive (prompts, drafts, and published versions)"
+        url: "https://github.com/constantinos-solomonides/30-days-ai-articles"
+
+  continuity_hook:
+    next_days:
+      day_08: "Opencode manual setup, and bootstrap of sandboxing"
+
+  output_rules:
+    formatting: markdown
+    emoji_usage: none
+    lock_behavior: "immutable_after_lock"
