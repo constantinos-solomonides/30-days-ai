@@ -27,6 +27,7 @@ article:
         - hype
         - evangelism
         - generic_pro_con_lists
+        - needless complex language
         - tutorial_explanations
         - using positive-bias words unless used in prompt
       preserve:
