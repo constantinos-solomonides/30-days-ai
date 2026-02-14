@@ -2,15 +2,12 @@
 
 ## TL;DR
 
--   Writing speed increased, but convergence and tone quality required
-    heavy iteration.
--   Coding with AI starts fast but converges slowly, often exposing
-    hidden logical gaps.
--   Bootstrapping a sandbox environment proved far more difficult than
-    expected.
+-   Writing speed increased, but convergence and tone quality are lacking
+-   Coding with AI starts fast but converges slowly, and is needlessly complicated
+-   Bootstrapping a sandbox environment proved far more difficult than hyped
 
 After one week, the results are mixed. AI helps generate output quickly
-but struggles with stability and integration. The 20/80 expectation
+but struggles with quality, stability and integration. The 20/80 expectation
 proved too optimistic, and I had to downgrade it to 40/60.
 
 ------------------------------------------------------------------------
@@ -35,31 +32,28 @@ belongs to someone else's preparation. Building it myself gives me a
 clearer baseline.
 
 To evaluate success, I used the Pareto principle. If 20% of the manual
-effort in prompt-writing yields 80% of the finished product, I call it
+effort in prompt-writing yields 80% of the finished product, I would call it
 success. This applies to both coding and writing.
 
 After one week, I had to revise that expectation. 20/80 proved
 unrealistic. 40/60 is closer to observed reality.
 
-As per Amara's Law:
+I remain skeptical of the hype. I also avoid dismissing the tool entirely. As per Amara's Law:
 
 > We tend to overestimate the effect of a technology in the short run
 > and underestimate the effect in the long run.
 
-I remain skeptical of hype. I also avoid dismissing the tool entirely.
-Transformation may come. It is not visible yet in daily engineering
-work.
 
 ------------------------------------------------------------------------
 
 ## Writing Experience
 
-Writing output increased quickly. Drafts assemble faster. Structure
+Writing output was generated quickly. Drafts become articles faster. Structure
 appears early. Expanding bullet points into full sections is easier.
 
 However, iteration cost is higher than expected. Articles require
-repeated refinement. The language often drifts into inflated phrasing.
-It develops a polished but generic tone.
+repeated refinement. The language is often "fluffy" and pompous, even with RIS rules and
+repeated prompts to simplify it.
 
 For example:
 
@@ -67,112 +61,141 @@ For example:
 > debugging loops. Output gains in drafting do not remove engineering
 > convergence overhead.
 
-This reads cleanly. It also reads interchangeable.
+So the end result is ready faster, but has no identity, contains hallucinated references and is many small and not-so-small ways sub-par. Additionally, I am still undecided on how much my manual writing speed would increase if I wrote myself a prompt and built the article around that. It's a data point I plan to add one of the coming days.
 
-Over time, tone compression becomes obvious. Sentence rhythm
-standardizes. Word choice narrows. When I push back against certain
-phrasing, similar bias reappears in different form.
-
-LinkedIn posts perform better because the task is constrained: "shorten
-this." That is easier than "write this from scratch."
-
-Output increased. Ownership decreased.
+Not to say there's nothing good. LinkedIn posts writing performs better because the task is constrained: "shorten this." That is easier than "write this from scratch." Then again, the claim and goal isn't to easily do what's easy. Still, that's what my experience has been so far.
 
 ------------------------------------------------------------------------
 
 ## Coding Experience
 
-Coding is more difficult.
+Coding suffers more than article writing. The first draft of code usually appears quickly. It looks plausible.
+It compiles. It even runs -usually-. Then edge cases appear or things don't work as expected. Assumptions
+fail.
 
-The first draft of code usually appears quickly. It looks plausible. It
-compiles. It even runs. Then edge cases appear. Small logical gaps
-emerge. Fixing one issue reveals another.
-
-Debugging becomes iterative. I act as a mediator between model output
+Debugging becomes an iterative process. I act as a mediator between model output
 and runtime behavior. Some suggestions improve the situation. Others
 create new problems.
 
-The model performs well with tightly scoped tasks. Reliability drops
-when integration or broader system reasoning is required. Context
-weakens across multiple iterations. Multi-step debugging remains
-unstable.
+The model performs well enough with tightly scoped, simple tasks tasks. When the solution would need someone
+who thinks critically, and real solutions often do, it fails. A rubber duck should be silent or critical. AI
+is anything but. There's a reason git imperative exists and it's not because tone is a priority.
 
-There is also bias in the experiment itself. I am a software engineer.
-Writing instructions for machines is not new to me. That background
-likely improves results. It does not eliminate instability.
+The issues exist despite the bias built-in to the experiment because of who runs it. I am a software engineer;
+writing instructions for machines is nothing new to me; solving problems using code is what I do, both by
+vocation and profession. And yet. This tool constrains me as much as it helps. Maybe more.
 
-Despite effort, the sandbox remains unrealized. Without it, I will not
-allow an agent access to my machine. Risk containment matters.
+As a result, despite all my efforts, the sandbox remains unrealized. Without it, I will not
+allow an agent access to my machine. The choices shouldn't be "risk becoming a cautionary tale or don't use
+it"
 
-The downgrade from 20/80 to 40/60 reflects this reality. That is not a
-failure. It is a measured outcome.
+At the end of the day, I had to do manual work and downgrade my  20/80 expectation to 40/60. It's not a
+failure of the experiment, it's an outcome.
 
 ------------------------------------------------------------------------
 
 ## Pay-to-Win
 
 AI is a product. Better models cost money. Running agents locally
-requires hardware. Iterative convergence increases API usage.
+requires hardware. Iterative convergence increases API usage, and that costs time and money.
 
 The larger the project, the higher the accumulated cost. Debugging loops
-multiply usage. Writing may feel cheap. Engineering convergence is not.
+multiply usage of tokens, input and output. Writing may feel cheap but the bill at the end may prove it's
+anything but.
 
-Cost-to-convergence becomes visible at scale.
+Cost-to-convergence becomes visible at scale, and even then, it doesn't get you everything. For example, [this experiment by anthropic](https://www.anthropic.com/engineering/building-c-compiler) was conducted by someone who's not just a software engineer, but by someone working for Anthropic. It took two weeks and 20,000 USD to get something that doesn't work fully. And that's for a problem that's very well defined, and whose solution was most likely used to train the agents. As I said: I am *very* skeptical of the hype.
 
 ------------------------------------------------------------------------
 
 ## Broader Concerns
 
-### Environmental Impact
+The direct issues aren't the only ones that exist and need to be considered. There are environmental, moral, and other angles to consider, with short, mid and long-term impacts for our lives. These are all things that I can't measure as part of this experiment but that I **must** take into consideration while using the tool.
 
-Large-scale AI systems require significant compute resources. Training
-models consumes substantial energy. Inference at scale also accumulates
-cost. Individual use may feel small, but the aggregate footprint is
-large.
 
-The environmental tradeoff is rarely visible at the prompt level. It
-remains part of the system-level equation.
+### Knowledge (White collar) Work Displacement
+AI is touted as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver. AI adoption is either a premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
 
-### Knowledge Work Displacement
-
-AI tools can replicate structured text production and pattern-based
-reasoning. Roles built around repeatable synthesis may face earlier
-disruption than high-context engineering work.
-
-The effect is uneven. Some professionals gain leverage. Others face
-compression of demand. The distribution of impact matters.
+Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. AI harmed intellectual workers before it even took off in other words, and it seems to keep doing that.
 
 ### Concentration of Power
 
 Model training, infrastructure, and large-scale compute are concentrated
 in a small number of organizations. This creates dependency risk. Access
 to advanced capability depends on pricing, policy, and platform
-stability.
+stability. Centralization changes who controls the tools of knowledge production.
 
-Centralization changes who controls the tools of knowledge production.
+On top of that, paying for something means supporting all the causes the owning company supports. Lately, the ideological gap between the average person and CEOs and owners of the companies profiting from AI seems to be growing at an accelerated pace.
 
-### Acceleration vs Exploitation
+### Environmental Impact
 
-Acceleration increases output for those who can constrain and validate
-results. It may also increase pressure on roles that depend on
-standardized production.
+Large-scale AI systems require significant resources. Training
+models consumes substantial energy. Data centers need to be built, equipped and powered.
+Individual use may feel small, but the aggregate footprint is large.
 
-The same mechanism that expands leverage can intensify competition.
-Whether this becomes empowerment or exploitation depends on structure
-and incentives.
+The environmental cost is rarely -if ever- visible at the prompt level. It
+remains part of the system-level equation, and that's the bill we'll be called to pay in the end.
+
+### Nefarious uses of AI
+
+Growth and innovation to a tool don't happen selectively. Once the tool becomes better, it's better when used for good and better when used for evil. This is true for everything, from transportation to power tools. AI is special in that case, because it can **really** be used for evil. Smart weapons, mass surveillance, facial recognition, there's a thousand ways it can be abused by governments and nefarious actors.
+
+Even when not intentionally used for evil, it can harm. It's the ideal yes-man, the quintessential enabler. Making it more convincing may lead to more unfortunate incidents, like the one where [a son killed his mother and himself due to AI fueling his paranoia](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/). I fear for the generation that is exposed to it during their formative years, as well as those that follow. All branches of engineering have some horror stories of catastrophic failure that led to stricter regulations. AI may be it for Software Engineering.
 
 ------------------------------------------------------------------------
 
 ## Conclusion
 
-After one week, AI increases writing output but reduces stylistic
-ownership. It accelerates initial coding drafts but struggles with
-stable convergence.
+The impression from the next week is that AI increases writing output but disproportionately reduces quality. It accelerates creating initial coding drafts but struggles with stable convergence and understanding the specs.
 
-The sandbox barrier limits autonomy. The 20/80 expectation proved
-unrealistic and was adjusted to 40/60.
+AI does not replace engineering judgment. It does seem to behave more like an eager junior engineer: fast, confident, and in need of supervision.
 
-AI does not replace engineering judgment. It behaves more like an eager
-junior engineer: fast, confident, and in need of supervision.
+The experiment continues, with hopes of better outcomes by the end of it.
 
-The experiment continues.
+---
+
+## Links
+
+### Project & Articles
+- **Experiment repository on** [**github**](
+    https://github.com/constantinos-solomonides/pytest-framework-example)
+- **Articles & prompts repository on** [**github**](
+    https://github.com/constantinos-solomonides/30-days-ai-articles)
+- [Bootstrapping_\(
+    compilers\) at Wikipedia](https://en.wikipedia.org/wiki/Bootstrapping_\(compilers\))
+- [Amara's law](
+    https://www.computer.org/publications/tech-news/trends/amaras-law-and-tech-future)
+- [Git Commit Styleguide](
+    https://github.com/goodbyekansas/git-commit-styleguide)
+- [Companies Are Laying Off Workers Because of AI’s Potential—Not Its Performance](
+    https://hbr.org/2026/01/companies-are-laying-off-workers-because-of-ais-potential-not-its-performance)
+- [‘AI-washing’ and ‘forever layoffs’: Why companies keep cutting jobs, even amid rising profits](
+    https://fortune.com/2026/02/10/ai-washing-and-forever-layoffs-why-companies-keep-cutting-jobs-even-amid-rising-profits/)
+- [Companies are blaming AI for job cuts. Critics say it’s a 'good excuse'](
+    https://www.cnbc.com/2025/10/19/firms-are-blaming-ai-for-job-cuts-critics-say-its-a-good-excuse.html)
+- [OpenAI’s President Gave Millions to Trump. He Says It’s for Humanity](
+    https://www.wired.com/story/openai-president-greg-brockman-political-donations-trump-humanity/)
+- [Artificial Intelligence: The New Eyes Of Surveillance](
+    https://www.forbes.com/councils/forbestechcouncil/2024/02/02/artificial-intelligence-the-new-eyes-of-surveillance/)
+- [How AI Is Used In War Today](
+    https://www.forbes.com/sites/bernardmarr/2024/09/17/how-ai-is-used-in-war-today/)
+- [AI Copyright Lawsuit Developments in 2025: A Year in Review](
+    https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/)
+- [How ChatGPT fueled delusional man who killed mom, himself in posh Conn. town](
+    https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/)
+
+------------------------------------------------------------------------
+
+## Coming up
+
+A two-day pause to take-care of physical-world tasks and then
+
+Day 08 - Back to building the sandbox, using "opencode"
+
+------------------------------------------------------------------------
+
+## Disclosure
+*This article is part of **The Pareto Line** series — a 30-day experiment in AI use, focused on producing Pareto-optimal outputs while keeping human judgment in the loop.*
+
+*The series deliberately uses AI systems to draft articles and generate derivative content. A Pareto approach is followed: roughly 80% of a draft is considered acceptable, after which it is edited and corrected manually.*
+
+*The stance throughout is deliberately skeptical. AI is treated as a useful tool, not as an authority. It is approached like an enthusiastic junior: helpful when guided and reviewed, capable of creating serious problems when allowed to operate without supervision.*
