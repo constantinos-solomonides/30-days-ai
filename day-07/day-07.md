@@ -1,4 +1,5 @@
 # AI Day 07 -- First Week Retrospective
+*The Pareto Line --- a 30-day experiment in AI use*
 
 ## TL;DR
 
@@ -121,9 +122,9 @@ The direct technical issues aren't the only ones that exist and need to be consi
 
 
 ### Knowledge (White collar) Work Displacement
-AI is touted at least in part as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver what everyone is claiming it does in term of profit boost, to the point where discussions of an "AI bubble" are becoming more common. AI adoption is criticized as premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
+AI is touted at least in part as a drop-in replacement for coding and other knowledge-related skills. As such, it is increasingly cited in restructuring decisions. This comes at a period where, also due to DOGE layoffs and tariffs, there has been a flooding of skilled labor in the market and a reduction of spending. The technology itself is also very costly, requiring investment in new datacenters, their equipment and powering them, while returns don't seem to be in line with expectations. This appears to drive talks of an "AI bubble" becoming more and more common. AI adoption is criticized as premature overcommit, not delivering promised results, yet causing loss of livelihoods.
 
-Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. In at least one case, one major AI provider settled a class-action lawsuit for 1.5 billion USD, while after that settlement "numerous other agreements were reached in high-profile cases in the AI music space". AI harmed intellectual workers before it even took off.
+Additionally, training AI itself seems to have been made possible thanks to a huge copyright infringement, as per the decision from class-action lawsuits about it. In at least one case, one major AI provider settled a class-action lawsuit for 1.5 billion USD, while after that settlement "numerous other agreements were reached in high-profile cases in the AI music space". AI harmed intellectual workers before it even took off.
 
 ### Concentration of Power
 
