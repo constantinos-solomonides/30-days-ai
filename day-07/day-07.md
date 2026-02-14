@@ -8,7 +8,6 @@
 - Bootstrapping a sandbox environment proved far more difficult than hyped
 - No "low code" or "no code" for me. I had to manually intervene
 
-
 After one week, the results are mixed. AI helps generate output quickly
 but struggles with quality, stability and integration. The 20/80 expectation
 proved too optimistic, and I had to downgrade it to 40/60.
@@ -46,6 +45,7 @@ I remain skeptical of the hype. I also avoid dismissing the tool entirely. As pe
 > We tend to overestimate the effect of a technology in the short run
 > and underestimate the effect in the long run.
 
+However, as part of this retrospective, I also include my concerns from a more abstract, ideological perspective. This is a one-off for this series, but I feel it must be said at least once. These are not criticisms about the tool itself, but concerns about the dangers of giving more dangerous tools to humanity.
 
 ------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ Not to say there's nothing good. LinkedIn posts writing performs better because 
 
 Coding suffers more than article writing. The first draft of code usually appears quickly. It looks plausible.
 It compiles. It even runs -usually-. Then edge cases appear or things don't work as expected. Assumptions
-fail. For example, in the first iteration for the sandbox, it set and used two environment variables, `UID`, and `GID` in a `bash` script. The problem is that `UID` is read-only, and `GID` isn't set by `bash`. So the script failed out-of-the-box and had to be modified to bypass this.
+fail. For example, in the first iteration for the sandbox, it set and used two environment variables, `UID`, and `GID` in a `bash` script. The problem is that `UID` is read-only, and `GID` isn't set by `bash`. So the script failed out-of-the-box and had to be modified to bypass this. More importantly, when asked to persist data, it structured the series of mounts in such a way that the mounted volume would mask the contents, causing failures, and would be inconsistent with locations being mounted. This was way more blocking than renaming a variable in a couple of points
 
 Debugging becomes an iterative process without an agent. I act as a mediator between model output
 and runtime behavior. Some suggestions improve the situation. Others
@@ -109,18 +109,21 @@ The larger the project, the higher the accumulated cost. Debugging loops
 multiply usage of tokens, input and output. Writing may feel cheap but the bill at the end may prove it's
 anything but.
 
-Cost-to-convergence becomes visible at scale, and even then, it doesn't get you everything. For example, [this experiment by anthropic](https://www.anthropic.com/engineering/building-c-compiler) was conducted by someone who's not just a software engineer, but by someone working for Anthropic. According to them, it took two weeks, 2,000 Claude code sessions and 20,000 USD to get something that doesn't work fully. The [issues section of the repository](https://github.com/anthropics/claudes-c-compiler/issues) is an interesting read. And that's for a problem that's very well defined, and whose solution was most likely used to train the agents. As I said: I am *very* skeptical of the hype.
+Cost-to-convergence becomes visible at scale, and even then, it doesn't get you everything. For example, [this experiment by anthropic](https://www.anthropic.com/engineering/building-c-compiler) was conducted by someone who's not just a software engineer, but by someone working for Anthropic. According to them, it took two weeks, 2,000 Claude code sessions and 20,000 USD to get something that doesn't work fully, as cleanly stated in the article. The [issues section of the repository](https://github.com/anthropics/claudes-c-compiler/issues) is an interesting read. And that's for a problem that's very well defined, and whose solution was most likely used to train the agents. As I said: I am *very* skeptical of the hype.
 
 ------------------------------------------------------------------------
 
 ## Broader Concerns
 
+As AI is still an emerging technology, albeit rapidly expanding, research for socio-economic impact has yet to catch-up. This section contains anecdotes and conjecture and should be read with this in mind.
+
 The direct technical issues aren't the only ones that exist and need to be considered. There are environmental, moral, and other angles to consider, with short, mid and long-term impacts for our lives. These are all things that I can't measure as part of this experiment but that I **must** take into consideration while using the tool. This section departs from a technical PoV, but that is also within the scope of Engineering. We are after all problem solvers, and a solution causing bigger problems is no solution at all.
 
-### Knowledge (White collar) Work Displacement
-AI is touted as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver what everyone is claiming it does in term of profit boost, to the point where discussions of an "AI bubble" are becoming more common. AI adoption seems to be either a premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
 
-Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. AI harmed intellectual workers before it even took off in other words, and it seems to keep doing that.
+### Knowledge (White collar) Work Displacement
+AI is touted at least in part as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver what everyone is claiming it does in term of profit boost, to the point where discussions of an "AI bubble" are becoming more common. AI adoption is criticized as premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
+
+Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. In other words, AI harmed intellectual workers before it even took off.
 
 ### Concentration of Power
 
@@ -140,9 +143,9 @@ Individual use may feel small, but the aggregate footprint is large.
 The environmental cost is rarely -if ever- visible at the prompt level. It
 remains part of the system-level equation, and that's the bill we'll be called to pay in the end.
 
-### Nefarious uses of AI
+### Other problems with AI uses
 
-Growth and innovation to a tool don't happen selectively. Once the tool becomes better, it's better when used for good and better when used for evil. This is true for everything, from transportation to power tools. AI is special in that case, because it can **really** be used for evil. Smart weapons, mass surveillance, facial recognition, there's a thousand ways it can be abused by governments and nefarious actors.
+Growth and innovation to a tool don't happen selectively. Once the tool becomes better, it's better when used for good and more efficient when used for evil. This is true for everything, from transportation to power tools. AI is not special in that sense. What sets it aside, is that it expands the scope for doing good and evil way beyond what was feasible until now. Smart weapons, mass surveillance, facial recognition, there are multiple ways to abuse it, even as it is used to accelerate research in service of health and progress.
 
 Even when not intentionally used for evil, it can harm. It's the ideal yes-man, the quintessential enabler. Making it more convincing may lead to more unfortunate incidents, like the one where [a son killed his mother and himself due to AI fueling his paranoia](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/). I fear for the generation that is exposed to it during their formative years, as well as those that follow. Experts already speak of [AI psychosis in teens](https://www.cbsnews.com/chicago/news/ai-chatbot-girlfriend-boyfriend-teens-psychosis/). All branches of engineering have some horror stories of catastrophic failure that led to stricter regulations. AI may be it for Software Engineering.
 
@@ -154,7 +157,7 @@ The impression from the first week is that AI increases writing output but dispr
 
 AI does not replace engineering judgment. It does seem to behave more like an eager junior engineer: fast, confident, and in need of supervision.
 
-The experiment continues, with hopes of better outcomes by the end of it. Not only from a technical standpoint, that will be easy to identify and coming soon, but in general, in the coming years and decades.
+The experiment continues, with hopes of better outcomes by the end of it.
 
 ---
 
