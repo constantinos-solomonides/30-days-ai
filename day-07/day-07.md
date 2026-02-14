@@ -2,9 +2,12 @@
 
 ## TL;DR
 
--   Writing speed increased, but convergence and tone quality are lacking
--   Coding with AI starts fast but converges slowly, and is needlessly complicated
--   Bootstrapping a sandbox environment proved far more difficult than hyped
+- Writing speed increased, but convergence and tone quality are lacking
+- Coding with AI starts fast but converges slowly, and is needlessly complicated.
+- I had to throw most of the code I got out.
+- Bootstrapping a sandbox environment proved far more difficult than hyped.
+- No "low code" or "no code" for me. I had to manually intervene
+
 
 After one week, the results are mixed. AI helps generate output quickly
 but struggles with quality, stability and integration. The 20/80 expectation
@@ -61,7 +64,7 @@ For example:
 > debugging loops. Output gains in drafting do not remove engineering
 > convergence overhead.
 
-So the end result is ready faster, but has no identity, contains hallucinated references and is many small and not-so-small ways sub-par. Additionally, I am still undecided on how much my manual writing speed would increase if I wrote myself a prompt and built the article around that. It's a data point I plan to add one of the coming days.
+So the end result is ready faster, but has no identity, contains hallucinated references and is many small and not-so-small ways sub-par. The conversations in the project repository chronicle my frustration with the outputs. Additionally, I am still undecided on how much my manual writing speed would increase if I wrote myself a prompt and built the article around that. It's a data point I plan to add one of the coming days.
 
 Not to say there's nothing good. LinkedIn posts writing performs better because the task is constrained: "shorten this." That is easier than "write this from scratch." Then again, the claim and goal isn't to easily do what's easy. Still, that's what my experience has been so far.
 
@@ -89,8 +92,11 @@ As a result, despite all my efforts, the sandbox remains unrealized. Without it,
 allow an agent access to my machine. The choices shouldn't be "risk becoming a cautionary tale or don't use
 it"
 
-At the end of the day, I had to do manual work and downgrade my  20/80 expectation to 40/60. It's not a
-failure of the experiment, it's an outcome.
+At the end of the day, I had to do manual work and downgrade my 20/80 expectation to 40/60. The day-06 article (available on [wordpress](
+https://anthropocentricsoftware.wordpress.com/2026/02/12/ai-day-06-a-day-of-manual-work/
+)
+and [substack](https://open.substack.com/pub/csolomonides/p/ai-day-06-a-day-of-manual-work?r=1g7elm&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true))
+contains more details on why I did it and how. It's not a failure of the experiment, it's an outcome.
 
 ------------------------------------------------------------------------
 
@@ -103,14 +109,13 @@ The larger the project, the higher the accumulated cost. Debugging loops
 multiply usage of tokens, input and output. Writing may feel cheap but the bill at the end may prove it's
 anything but.
 
-Cost-to-convergence becomes visible at scale, and even then, it doesn't get you everything. For example, [this experiment by anthropic](https://www.anthropic.com/engineering/building-c-compiler) was conducted by someone who's not just a software engineer, but by someone working for Anthropic. It took two weeks and 20,000 USD to get something that doesn't work fully. And that's for a problem that's very well defined, and whose solution was most likely used to train the agents. As I said: I am *very* skeptical of the hype.
+Cost-to-convergence becomes visible at scale, and even then, it doesn't get you everything. For example, [this experiment by anthropic](https://www.anthropic.com/engineering/building-c-compiler) was conducted by someone who's not just a software engineer, but by someone working for Anthropic. According to them, it took two weeks, 2,000 Claude code sessions and 20,000 USD to get something that doesn't work fully. The [issues section of the repository](https://github.com/anthropics/claudes-c-compiler/issues) is an interesting read. And that's for a problem that's very well defined, and whose solution was most likely used to train the agents. As I said: I am *very* skeptical of the hype.
 
 ------------------------------------------------------------------------
 
 ## Broader Concerns
 
-The direct issues aren't the only ones that exist and need to be considered. There are environmental, moral, and other angles to consider, with short, mid and long-term impacts for our lives. These are all things that I can't measure as part of this experiment but that I **must** take into consideration while using the tool.
-
+The direct technical issues aren't the only ones that exist and need to be considered. There are environmental, moral, and other angles to consider, with short, mid and long-term impacts for our lives. These are all things that I can't measure as part of this experiment but that I **must** take into consideration while using the tool. This section departs from a technical PoV, but that is also within the scope of Engineering. We are after all problem solvers, and a solution causing bigger problems is no solution at all.
 
 ### Knowledge (White collar) Work Displacement
 AI is touted as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver. AI adoption is either a premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
@@ -145,11 +150,11 @@ Even when not intentionally used for evil, it can harm. It's the ideal yes-man, 
 
 ## Conclusion
 
-The impression from the next week is that AI increases writing output but disproportionately reduces quality. It accelerates creating initial coding drafts but struggles with stable convergence and understanding the specs.
+The impression from the first week is that AI increases writing output but disproportionately reduces quality. It accelerates creating initial coding drafts but struggles with stable convergence and understanding the specs.
 
 AI does not replace engineering judgment. It does seem to behave more like an eager junior engineer: fast, confident, and in need of supervision.
 
-The experiment continues, with hopes of better outcomes by the end of it.
+The experiment continues, with hopes of better outcomes by the end of it. Not only from a technical standpoint, that will be easy to identify and coming soon, but in general, in the coming years and decades.
 
 ---
 
@@ -182,6 +187,7 @@ The experiment continues, with hopes of better outcomes by the end of it.
     https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/)
 - [How ChatGPT fueled delusional man who killed mom, himself in posh Conn. town](
     https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/)
+-[issues section of antrhopic's experiment repository](https://github.com/anthropics/claudes-c-compiler/issues)
 
 ------------------------------------------------------------------------
 
