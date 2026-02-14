@@ -3,9 +3,9 @@
 ## TL;DR
 
 - Writing speed increased, but convergence and tone quality are lacking
-- Coding with AI starts fast but converges slowly, and is needlessly complicated.
+- Coding with AI starts fast but converges slowly, and is needlessly complicated
 - I had to throw most of the code I got out.
-- Bootstrapping a sandbox environment proved far more difficult than hyped.
+- Bootstrapping a sandbox environment proved far more difficult than hyped
 - No "low code" or "no code" for me. I had to manually intervene
 
 
@@ -64,7 +64,7 @@ For example:
 > debugging loops. Output gains in drafting do not remove engineering
 > convergence overhead.
 
-So the end result is ready faster, but has no identity, contains hallucinated references and is many small and not-so-small ways sub-par. The conversations in the project repository chronicle my frustration with the outputs. Additionally, I am still undecided on how much my manual writing speed would increase if I wrote myself a prompt and built the article around that. It's a data point I plan to add one of the coming days.
+So the end result is ready faster, but has no identity, contains hallucinated references (for example, even with explicitly given links to two repositories on day 05, it added a random one for the second one) and is many small and not-so-small ways sub-par. The conversations in the project repository chronicle my frustration with the outputs. Additionally, I am still undecided on how much my manual writing speed would increase if I wrote myself a prompt and built the article around that. It's a data point I plan to add one of the coming days.
 
 Not to say there's nothing good. LinkedIn posts writing performs better because the task is constrained: "shorten this." That is easier than "write this from scratch." Then again, the claim and goal isn't to easily do what's easy. Still, that's what my experience has been so far.
 
@@ -74,13 +74,13 @@ Not to say there's nothing good. LinkedIn posts writing performs better because 
 
 Coding suffers more than article writing. The first draft of code usually appears quickly. It looks plausible.
 It compiles. It even runs -usually-. Then edge cases appear or things don't work as expected. Assumptions
-fail.
+fail. For example, in the first iteration for the sandbox, it set and used two environment variables, `UID`, and `GID` in a `bash` script. The problem is that `UID` is read-only, and `GID` isn't set by `bash`. So the script failed out-of-the-box and had to be modified to bypass this.
 
-Debugging becomes an iterative process. I act as a mediator between model output
+Debugging becomes an iterative process without an agent. I act as a mediator between model output
 and runtime behavior. Some suggestions improve the situation. Others
 create new problems.
 
-The model performs well enough with tightly scoped, simple tasks tasks. When the solution would need someone
+The model performs well enough with tightly scoped, simple tasks. When the solution would need someone
 who thinks critically, and real solutions often do, it fails. A rubber duck should be silent or critical. AI
 is anything but. There's a reason git imperative exists and it's not because tone is a priority.
 
@@ -118,7 +118,7 @@ Cost-to-convergence becomes visible at scale, and even then, it doesn't get you 
 The direct technical issues aren't the only ones that exist and need to be considered. There are environmental, moral, and other angles to consider, with short, mid and long-term impacts for our lives. These are all things that I can't measure as part of this experiment but that I **must** take into consideration while using the tool. This section departs from a technical PoV, but that is also within the scope of Engineering. We are after all problem solvers, and a solution causing bigger problems is no solution at all.
 
 ### Knowledge (White collar) Work Displacement
-AI is touted as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver. AI adoption is either a premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
+AI is touted as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver what everyone is claiming it does in term of profit boost, to the point where discussions of an "AI bubble" are becoming more common. AI adoption seems to be either a premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
 
 Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. AI harmed intellectual workers before it even took off in other words, and it seems to keep doing that.
 
@@ -144,7 +144,7 @@ remains part of the system-level equation, and that's the bill we'll be called t
 
 Growth and innovation to a tool don't happen selectively. Once the tool becomes better, it's better when used for good and better when used for evil. This is true for everything, from transportation to power tools. AI is special in that case, because it can **really** be used for evil. Smart weapons, mass surveillance, facial recognition, there's a thousand ways it can be abused by governments and nefarious actors.
 
-Even when not intentionally used for evil, it can harm. It's the ideal yes-man, the quintessential enabler. Making it more convincing may lead to more unfortunate incidents, like the one where [a son killed his mother and himself due to AI fueling his paranoia](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/). I fear for the generation that is exposed to it during their formative years, as well as those that follow. All branches of engineering have some horror stories of catastrophic failure that led to stricter regulations. AI may be it for Software Engineering.
+Even when not intentionally used for evil, it can harm. It's the ideal yes-man, the quintessential enabler. Making it more convincing may lead to more unfortunate incidents, like the one where [a son killed his mother and himself due to AI fueling his paranoia](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/). I fear for the generation that is exposed to it during their formative years, as well as those that follow. Experts already speak of [AI psychosis in teens](https://www.cbsnews.com/chicago/news/ai-chatbot-girlfriend-boyfriend-teens-psychosis/). All branches of engineering have some horror stories of catastrophic failure that led to stricter regulations. AI may be it for Software Engineering.
 
 ------------------------------------------------------------------------
 
@@ -187,7 +187,8 @@ The experiment continues, with hopes of better outcomes by the end of it. Not on
     https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/)
 - [How ChatGPT fueled delusional man who killed mom, himself in posh Conn. town](
     https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/)
--[issues section of antrhopic's experiment repository](https://github.com/anthropics/claudes-c-compiler/issues)
+- [issues section of antrhopic's experiment repository](https://github.com/anthropics/claudes-c-compiler/issues)
+- [AI psychosis in teens](https://www.cbsnews.com/chicago/news/ai-chatbot-girlfriend-boyfriend-teens-psychosis/)
 
 ------------------------------------------------------------------------
 
