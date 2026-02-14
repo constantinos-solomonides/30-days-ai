@@ -123,7 +123,7 @@ The direct technical issues aren't the only ones that exist and need to be consi
 ### Knowledge (White collar) Work Displacement
 AI is touted at least in part as a drop-in replacement for coding and other knowledge-related skills. As such, it's been used as an excuse by companies to do massive layoffs, flooding the job market and causing issues on multiple fronts. What's worse, is that the tool doesn't really deliver what everyone is claiming it does in term of profit boost, to the point where discussions of an "AI bubble" are becoming more common. AI adoption is criticized as premature overcommit, or in many cases a smoke-screen to allow the layoffs without stock impacts.
 
-Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. In other words, AI harmed intellectual workers before it even took off.
+Additionally, training AI seems to have been made possible thanks to a huge copyright infringement. In at least one case, one major AI provider settled a class-action lawsuit for 1.5 billion USD, while after that settlement "numerous other agreements were reached in high-profile cases in the AI music space". AI harmed intellectual workers before it even took off.
 
 ### Concentration of Power
 
@@ -146,8 +146,6 @@ remains part of the system-level equation, and that's the bill we'll be called t
 ### Other problems with AI uses
 
 Growth and innovation to a tool don't happen selectively. Once the tool becomes better, it's better when used for good and more efficient when used for evil. This is true for everything, from transportation to power tools. AI is not special in that sense. What sets it aside, is that it expands the scope for doing good and evil way beyond what was feasible until now. Smart weapons, mass surveillance, facial recognition, there are multiple ways to abuse it, even as it is used to accelerate research in service of health and progress.
-
-Even when not intentionally used for evil, it can harm. It's the ideal yes-man, the quintessential enabler. Making it more convincing may lead to more unfortunate incidents, like the one where [a son killed his mother and himself due to AI fueling his paranoia](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/). I fear for the generation that is exposed to it during their formative years, as well as those that follow. Experts already speak of [AI psychosis in teens](https://www.cbsnews.com/chicago/news/ai-chatbot-girlfriend-boyfriend-teens-psychosis/). All branches of engineering have some horror stories of catastrophic failure that led to stricter regulations. AI may be it for Software Engineering.
 
 ------------------------------------------------------------------------
 
