@@ -186,10 +186,7 @@ The experiment continues, with hopes of better outcomes by the end of it.
     https://www.forbes.com/sites/bernardmarr/2024/09/17/how-ai-is-used-in-war-today/)
 - [AI Copyright Lawsuit Developments in 2025: A Year in Review](
     https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/)
-- [How ChatGPT fueled delusional man who killed mom, himself in posh Conn. town](
-    https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/)
 - [issues section of antrhopic's experiment repository](https://github.com/anthropics/claudes-c-compiler/issues)
-- [AI psychosis in teens](https://www.cbsnews.com/chicago/news/ai-chatbot-girlfriend-boyfriend-teens-psychosis/)
 
 ------------------------------------------------------------------------
 
