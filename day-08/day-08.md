@@ -21,7 +21,8 @@ allowed to assist in generating these very updates.
 ## Discoveries in the meantime
 
 There was an interesting bit of news that came out between my publishing day-07 and this one, the one about
-Meta's alignment director's e-mails being deleted by an AI assistant. This is a vindication of what I and
+Meta's alignment director's e-mails being deleted by an AI assistant. This is not a random engineer, but the
+person hired by one of the big tech companies as a prominent expert on AI. This is a vindication of what I and
 other colleagues have been saying for a long time, that trusting an agent can be a really bad idea with
 unwanted consequences. So let me repeat myself **AI is a multiplier** and **GIGO still applies**. If you're
 not holding the wheel, you're simply speeding faster towards the rock you'll crash onto.
@@ -30,8 +31,9 @@ not holding the wheel, you're simply speeding faster towards the rock you'll cra
 With the pause behind me, the focus has shifted to building a robust, reproducible environment for OpenCode.
 I have successfully created a sandbox utilizing the OpenCode assistant within a Docker container. However, to
 address the security concerns of Docker running as root, I have implemented a layer of double isolation: a
-`Vagrant` configuration now manages the containers. This ensures that the experimentation remains contained
-and the host system remains protected. This required manual intervention to converge fast enough.
+`Vagrant` configuration now deploys the environment in which the containers are deployed. This reduces the
+probability some clever code is used to allow escaping the docker sandbox or otherwise overloading the system,
+e.g. by filling the hard disks or hogging the CPU.
 
 ## The Pivot to Google Gemini
 While the attempt to use Ollama models locally was a valuable exercise in sovereignty, it ultimately proved
@@ -49,19 +51,23 @@ to another model that I've seen being spoken highly-of
 To eliminate the friction of browser-based "back-and-forth," the workflow is moving entirely to the CLI.
 Communication will now occur via repository commits, and `prompt.md` files will be versioned to track the
 evolution of our instructions. This "bootstrapping" method uses OpenCode to kickstart the transition into
-other assistants, including Gemini.
+other assistants, including Gemini. An additional benefit of this approach is that the repository also becomes
+how history and interactions are tracked, simplifying the process and avoiding the need to refer to multiple
+sources of truth.
 
 ## Next Steps
 The infrastructure is expanding. A Gemini container is to be added, along with a PlantUML container to allow
 creating diagrams when needed. The README for the pytest framework will also be refactored to serve
-as a persistent prompt for the assistant as well as documentation. 
+as a persistent prompt for the assistant as well as documentation. By having the PlantUML as part of the
+toolbox, human beings are given more tools to help us visualize what's being done, thus more comfortably
+shifting into an architectural and orchestration role.
 
-This is close to how the actual work would take place, meaning a "design, implement, identify, iterate". Part
-of why "iterate" is necessary is that the project is meant to be good enough for production on the conceptual
-level, while light enough to be run as a toybox on the implementation level. This means that, eventually, each
-component will be a black box with a well-defined perimeter, but that can have anything inside and be of any
-size. It's absolutely a very ambitious goal, however the challenge is part of what makes the effort
-meaningful.
+This approach is how an actual project would have been implemented, meaning a "design, implement, identify,
+iterate". Part of why "iterate" is necessary is that the project is meant to be good enough for production on
+the conceptual level, while light enough to be run as a toybox on the implementation level. This means that,
+eventually, each component will be a black box with a well-defined perimeter, but that can have anything
+inside and be of any size. It's absolutely a very ambitious goal, however the challenge is part of what makes
+the effort meaningful.
 
 ---
 
