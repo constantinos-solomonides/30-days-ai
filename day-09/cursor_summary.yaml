@@ -1,0 +1,267 @@
+---
+# cursor_summary.yaml
+# Machine and human readable summary of the Day 09 Cursor interaction.
+# Intended to be parsed for article generation.
+# Format: YAML (structured, parseable, readable without tooling)
+
+series: "The Pareto Line -- a 30-day experiment in AI use"
+day: 9
+date: "2026-03-17"
+title_suggestion: "Day 09: Convergence Through Iteration"
+ai_tool: "Cursor (Claude claude-4.6-opus-high-thinking)"
+prior_tools: ["ChatGPT (days 1-7)", "Google Gemini (day 8-9)", "OpenCode (day 8)"]
+context: >
+  First session using Cursor as the AI coding assistant. Prior days used
+  ChatGPT and Gemini. Day 08 introduced Gemini as primary. This session
+  uses Cursor to refine and finalize a design document that already
+  contained raw outputs from both Gemini and a previous Cursor session.
+
+# ---------------------------------------------------------------------------
+# SESSION PHASES
+# ---------------------------------------------------------------------------
+phases:
+
+  - id: 1
+    name: "Parsing and concatenation"
+    description: >
+      The README contained three TODO AI sections, each with a GEMINI OUTPUT
+      and a CURSOR OUTPUT block from prior sessions. The task was to parse
+      both, ignore existing GEMINI CONCATENATION sections, and propose a
+      CURSOR CONCATENATION that merged the best of both outputs. Each section
+      was iterated until the user approved, then inserted into the file.
+    sections_processed:
+      - "System design > Components (9 infrastructure components)"
+      - "Application > Components (5 application components)"
+      - "Test suite (tooling + E2E/integration/unit test lists)"
+    observations:
+      - >
+        The iterative approval loop worked well. The user caught a markdown
+        rendering issue (blockquote after bullet without newline) before it
+        was committed. This kind of formatting-level review is something AI
+        consistently misses.
+      - >
+        The CURSOR output was consistently more granular than Gemini (e.g.
+        9 components vs 5, 18 E2E tests vs 5). Gemini contributed structure
+        (pros/cons format) and specific details the CURSOR output missed.
+      - >
+        The concatenation process was additive: the CURSOR output formed the
+        base, and Gemini filled gaps. Neither output was discarded entirely.
+
+  - id: 2
+    name: "Second pass -- final merge"
+    description: >
+      A second iteration removed all raw output sections (GEMINI OUTPUT,
+      CURSOR OUTPUT) and the TODO AI markers. The CURSOR CONCATENATION and
+      GEMINI CONCATENATION were compared, differences summarized, and a
+      final section produced for each. Both concatenation blocks were then
+      removed, leaving clean final content.
+    observations:
+      - >
+        The CURSOR concatenation was strictly more complete in all three
+        sections. The Gemini concatenation added a small number of items
+        (ruff con, PostgreSQL/session-based alternatives, database
+        persistence test, whitespace sanitization test, timestamp comparator).
+      - >
+        The merge was low-conflict. Most of the Gemini additions were
+        one-liner insertions into an already comprehensive CURSOR list.
+
+  - id: 3
+    name: "Documentation strategy"
+    description: >
+      Discussed four approaches to documenting implementation decisions
+      (inline evolution, decision records, separate doc, hybrid). The user
+      selected Option D: hybrid. Selected-stack summary tables were added
+      to the README at the top of each major section. Implementation details
+      would go into a separate IMPLEMENTATION.md file.
+    decision: "Option D -- hybrid (summary tables in README, details in IMPLEMENTATION.md)"
+
+  - id: 4
+    name: "Decision mode -- technology selection"
+    description: >
+      Walked through every TBD entry in the three summary tables. Selection
+      criteria: most lightweight option, favor those with official Docker
+      images. Most selections were unambiguous. Two required user input
+      (Artifact Tracker, Log Tracker).
+    decisions:
+      infrastructure:
+        VCS: "GitHub"
+        CI_CD_Runner: "GitHub Actions"
+        Linter: "ruff"
+        Notification_Service: "Custom REST API (stub)"
+        Build_System: "Docker"
+        Artifact_Tracker: "Local Docker Registry (registry:2)"
+        Log_Tracker: "Custom REST API (custom Docker container)"
+        Deployment_Target: "Docker Compose"
+        Test_Runner: "pytest"
+      application:
+        Frontend: "React/TypeScript"
+        Backend_API: "FastAPI/Python"
+        Database: "SQLite"
+        Authentication: "JWT"
+        Service_Orchestration: "Docker Compose"
+      test_suite:
+        E2E: "Playwright"
+        Integration: "pytest + HTTPX"
+        Unit: "pytest"
+
+  - id: 5
+    name: "Log Tracker API design"
+    description: >
+      The user proposed a custom log tracker API instead of an off-the-shelf
+      tool. A multi-round design discussion followed, covering scope, retrieval
+      mechanisms, storage backend, normalization, endpoint semantics, retention,
+      concurrency, and line size limits.
+    final_spec:
+      endpoints: ["POST /logs", "GET /logs", "GET /info", "GET /version"]
+      storage: "Dedicated SQLite file, separate from application DB"
+      input: "JSON -- list of strings or list of objects with metadata"
+      retrieval: "Time range only in v1"
+      metadata_on_read: "Not exposed in v1 (stored, documented as future)"
+      regex_search: "Not implemented in v1 (documented as future, reverse indexing)"
+      max_line_size: "16KB"
+      retention: "Size cap with FIFO eviction"
+      concurrency_note: "SQLite serializes writes; MQ would be used in production"
+      swappable: "Container replaceable with any backend implementing same API"
+    observations:
+      - >
+        The user explicitly scoped this as a design showcase, not a production
+        service. The phrase "can grow but will not be in current scope to grow"
+        set a clear boundary.
+      - >
+        The discussion surfaced six concrete specification gaps that would
+        have caused implementation friction if left unresolved.
+
+  - id: 6
+    name: "IMPLEMENTATION.md creation"
+    description: >
+      Created a versioned IMPLEMENTATION.md (v0.1.0) as the operational
+      companion to the README. Covers prerequisites, project structure,
+      container inventory, configuration, build/deploy commands, linting,
+      test execution, log tracker usage, CI/CD workflows, and known
+      limitations.
+
+  - id: 7
+    name: "Session summary generation"
+    description: >
+      The user requested a machine-and-human-readable summary of the full
+      interaction, to be stored under articles/day-09/ for later article
+      generation. This file is that summary. The instruction explicitly
+      asked to mention itself if significant -- it is significant because
+      it demonstrates a deliberate workflow where AI interactions are
+      captured as structured data for downstream content generation, closing
+      the loop between engineering work and documentation.
+
+# ---------------------------------------------------------------------------
+# NOTABLE MOMENTS
+# ---------------------------------------------------------------------------
+notable_moments:
+
+  - type: "user_catch"
+    description: >
+      The user caught a markdown rendering bug (blockquote absorbed into
+      last bullet item without a blank line separator) before it was
+      committed to the file. Led to a formatting rule change: single NOTE
+      becomes a bold paragraph; multiple NOTEs become a subsection with
+      bullets.
+
+  - type: "digression"
+    description: >
+      Mid-session, the user asked an unrelated question about adding
+      newlines in CLI interactive prompts. The assistant answered it
+      without context from the ongoing discussion. The user then said
+      "Continue previous discussion" and the session resumed cleanly.
+      This demonstrates that context switching within a session works
+      but requires explicit re-entry.
+
+  - type: "scope_discipline"
+    description: >
+      The Log Tracker discussion could have expanded into a full service
+      design. The user consistently held the line on scope, deferring
+      features (regex search, metadata read, advanced queries) as
+      documented future capabilities rather than v1 requirements.
+
+  - type: "self_referential_instruction"
+    description: >
+      The summary generation instruction asked to "include mention of this
+      instruction if significant." This is a meta-pattern: the user treats
+      AI interactions as first-class artifacts, feeding session outputs
+      back into the content pipeline. The instruction itself is evidence
+      of a deliberate, loop-closing workflow.
+
+# ---------------------------------------------------------------------------
+# THEMES FOR ARTICLE
+# ---------------------------------------------------------------------------
+themes:
+
+  - name: "Iterative convergence"
+    description: >
+      The session followed a strict propose-review-approve loop. No content
+      was committed without explicit user approval. This is the opposite of
+      "generate and hope" -- it is incremental, verifiable, and reversible.
+
+  - name: "AI output as raw material, not final product"
+    description: >
+      Two AI models (Gemini and Cursor) produced raw outputs in prior
+      sessions. This session treated those outputs as ingredients to be
+      compared, merged, and refined -- not as finished sections to be
+      accepted wholesale.
+
+  - name: "Specification through discussion"
+    description: >
+      The Log Tracker API was not designed in a single prompt. It emerged
+      through six rounds of Q&A, each surfacing gaps the previous round
+      missed. The AI asked questions; the user made decisions. The final
+      spec is tighter than either party would have produced alone.
+
+  - name: "Documentation as a deliverable"
+    description: >
+      The session produced two documents (updated README, new
+      IMPLEMENTATION.md) and this summary. Documentation was not an
+      afterthought; it was the primary output. The code does not exist
+      yet; the design does.
+
+  - name: "Tool comparison as practice"
+    description: >
+      Using two different AI models on the same task (Gemini and Cursor)
+      and then merging their outputs is itself a methodology finding.
+      Neither model was strictly better; each had strengths the other
+      lacked. The merge was low-conflict but not zero-effort.
+
+  - name: "Cursor as the new tool"
+    description: >
+      This is the first session using Cursor in the series. Prior days
+      used ChatGPT and Gemini. The shift to Cursor brings a different
+      interaction model -- file-aware, tool-calling, integrated into the
+      editor. The structured rules file (RIS) governed the interaction
+      style throughout.
+
+# ---------------------------------------------------------------------------
+# STATISTICS
+# ---------------------------------------------------------------------------
+statistics:
+  user_messages: 14
+  phases: 7
+  files_modified: 1  # README.md
+  files_created: 2   # IMPLEMENTATION.md, this summary
+  readme_final_lines: 420
+  implementation_final_lines: ~230
+  sections_merged: 3
+  technology_decisions_made: 17
+  log_tracker_design_rounds: 3
+  total_edits_to_readme: ~15
+
+# ---------------------------------------------------------------------------
+# META
+# ---------------------------------------------------------------------------
+meta:
+  generated_by: "Cursor (Claude claude-4.6-opus-high-thinking)"
+  generation_date: "2026-03-17"
+  purpose: >
+    Structured session summary for article generation. Intended to be
+    parsed by an AI assistant or human author to produce a day-09 article
+    in the style of The Pareto Line series.
+  format_choice: >
+    YAML was selected as the output format because it is both machine
+    parseable (any YAML library) and human readable without tooling.
+    JSON was considered but is less pleasant to scan. Markdown was
+    considered but lacks structure for programmatic extraction.
