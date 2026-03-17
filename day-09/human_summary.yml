@@ -1,0 +1,19 @@
+Factors changing experience:
+  - AI sandbox finally created and functional
+  - Multiple agents useable from a single terminal using screen
+  - Files can be safely created directly
+  - Single-point-of-entry even for multiple agents
+Challenges:
+  - Session continuance slightly more complicated
+  - Token expenditure can be accelerated if runaway context present
+Advantages:
+  - Handling the agent is akin to guiding a junior colleague
+  - Acceptance of direct feedback improves work
+  - My -relatively- extensive experience with teaching and mentoring is also useful when guiding agents
+Points of improvement:
+  - Shifting back-and-forth between two agents for README plan was done sub-optimally
+  - Must find ways to improve speed
+  - Agents not tasked to work autonomously, manual still preferred
+Next steps:
+  - Start actual implementation of the project using agents
+  - Expand RIS to make tests first-class citizen and ensure high quality
