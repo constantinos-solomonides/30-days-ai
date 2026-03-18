@@ -4,10 +4,10 @@
 ## TL;DR
 
 * Used two AI models (Gemini and Cursor) on the same design document and merged their outputs
-* Integrated the thorough granularity of Cursor with the structural trade-offs provided by Gemini.
+* Integrated the thorough granularity of Cursor with the structural trade-offs provided by Gemini
 * Iterative propose-review-approve loops caught formatting bugs AI missed
 * 17 technology decisions made in a single session by applying simple selection criteria
-* Produced a versioned `IMPLEMENTATION.md` and a structured YAML summary as the primary deliverables.
+* Produced a versioned `IMPLEMENTATION.md` and a structured YAML summary as the primary deliverables
 
 
 ## Introduction
@@ -33,7 +33,7 @@ structure and granularity.
 Gemini produced fewer items per section but formatted them with explicit Pros/Cons for each option. Cursor
 produced more items -- sometimes three to four times as many -- but used flat bullet lists without weighing
 trade-offs. Neither approach was wrong. Gemini provided the structure while Cursor provided the thoroughness.
-The final value lived in the union of these two disparate outputs
+The final value lived in the union of these two disparate outputs.
 
 
 ## The Process: Propose, Review, Approve
@@ -41,7 +41,7 @@ The final value lived in the union of these two disparate outputs
 The merge followed a strict loop: the AI proposed a concatenated section, I reviewed it, and only after
 explicit approval was it written to the file. No content was committed without a green light. This sounds
 obvious, but it matters. AI assistants default to "generate and move on." Evaluating the proposals and
-approving something before it's committed is where humans explicitly add value
+approving something before it's committed is where humans explicitly add value.
 
 The loop caught a real issue on the first section. I noticed that a markdown blockquote placed immediately
 after a bullet list -- without a blank line -- would be absorbed into the last bullet item by most parsers.
@@ -80,8 +80,8 @@ instantly.
 
 Two items needed review and some back-and-forth: the Artifact Tracker and the Log Tracker.  The Artifact
 Tracker had a tension between "lightest" (GitHub Packages, zero infrastructure) and "has a Docker image"
-(Local Docker Registry).  I chose the registry -- self-contained, fits the single-host constraint, does not
-depend on internet or storage quotas
+(Local Docker Registry). I chose the registry -- self-contained, fits the single-host constraint, does not
+depend on internet or storage quotas.
 
 The Log Tracker became the most interesting design discussion of the session. Instead of picking an
 off-the-shelf tool, I proposed a custom REST API with a specific contract:
@@ -89,7 +89,7 @@ off-the-shelf tool, I proposed a custom REST API with a specific contract:
 * Accepts JSON logs
 * Retrieves by time range
 * Exposes `/info` and `/version` endpoints
-* Stores data in a dedicated SQLite file.
+* Stores data in a dedicated SQLite file
 
 The AI, roleplaying as a skeptical colleague as per the RIS, surfaced six specification gaps I had not
 addressed in my design:
@@ -99,7 +99,7 @@ addressed in my design:
 * Metadata normalization
 * Endpoint semantics
 * Concurrency implications
-* Retention policy.
+* Retention policy
 
 Three rounds of Q&A later, the spec was tight enough to commit, without having ambiguities.
 
@@ -150,52 +150,56 @@ together, looks like this:
 * A FastAPI/Python backend on port 8000 handling:
     * Authentication via JWT
     * Post validation
-    * The 10-second duplicate rejection rule.
+    * The 10-second duplicate rejection rule
 * A custom log tracker API on port 8001 with its own SQLite database file, deliberately separated from the
-  application database so a runaway log table cannot take down the app.
-* A notification service stub on port 8002, placeholder for future Slack and email integration.
-* A local Docker Registry (`registry:2`) on port 5000 for storing built images.
+  application database so a runaway log table cannot take down the app
+* A notification service stub on port 8002, placeholder for future Slack and email integration
+* A local Docker Registry (`registry:2`) on port 5000 for storing built images
 
 The CI/CD pipeline is two GitHub Actions workflows. **The first** runs ruff on every push -- fast,
 single-binary linting that catches issues before anything else happens. **The second** triggers on non-draft
 pull requests and runs the full sequence:
-    * Build all images
-    * Push to the local registry
-    * Deploy via `docker compose up`
-    * Wait for health checks on every service
-    * Run unit tests
-    * Run integration tests (pytest + HTTPX hitting the API directly)
-    * Run E2E tests (Playwright in a Docker container driving the frontend)
-    * Upload results to the log tracker
-    * Tear down.
+
+* Build all images
+* Push to the local registry
+* Deploy via `docker compose up`
+* Wait for health checks on every service
+* Run unit tests
+* Run integration tests (pytest + HTTPX hitting the API directly)
+* Run E2E tests (Playwright in a Docker container driving the frontend)
+* Upload results to the log tracker
+* Tear down
 
 Configuration is managed through a `.env` file with seven (7) variables accounted so far: database paths for
 both SQLite files, JWT secret and expiry, log line size cap (16KB), total log storage cap (256MB with FIFO
 eviction), and the registry port.
 
 The known limitations are documented upfront.
-    * SQLite serializes writes on both databases -- acceptable for a toy setup, but the implementation guide
-      notes where PostgreSQL and a message queue would replace it.
-    * The log tracker has no search capability in v1 -- time-range retrieval only -- with a note that reverse
-      indexing or an Elasticsearch backend would handle it in production.
-    * Internal services have no authentication; the guide names mutual TLS and API keys as the production path
+
+* SQLite serializes writes on both databases -- acceptable for a toy setup, but the implementation guide notes
+  where PostgreSQL and a message queue would replace it
+* The log tracker has no search capability in v1 -- time-range retrieval only -- with a note that reverse
+  indexing or an Elasticsearch backend would handle it in production
+* Internal services have no authentication; the guide names mutual TLS and API keys as the production path
+
 None of these are surprises. They are deliberate trade-offs, written down before anyone hits them during
 implementation.
 
 The test plan spans three levels:
-    * 18 end-to-end tests covering the full user workflow
-        * Timeline viewing
-        * Posting
-        * Authentication
-        * Character limits
-        * Duplicate detection
-    * 16 integration tests validating API contracts and boundary conditions
-        * Including precise 10-second/11-second duplicate timing
-        * Malformed token rejection
-    * 14 unit tests
-        * Isolating validators
-        * Duplicate detection logic
-        * Credential handling.
+
+* 18 end-to-end tests covering the full user workflow
+    * Timeline viewing
+    * Posting
+    * Authentication
+    * Character limits
+    * Duplicate detection
+* 16 integration tests validating API contracts and boundary conditions
+    * Including precise 10-second/11-second duplicate timing
+    * Malformed token rejection
+* 14 unit tests
+    * Isolating validators
+    * Duplicate detection logic
+    * Credential handling
 
 Nothing here is built yet. But it is specified tightly enough that the implementation phase can focus on
 writing code rather than making decisions. Changes may come in time, as real-world clashes with
@@ -235,24 +239,26 @@ This is deliberate. The design exists before the code. The test plan exists befo
 implementation guide exists before the implementation. Whether this survives contact with reality is the
 experiment's next question.
 
-I get that this also goes a bit against the much-abused "Agile" approach.
+I get that this also goes a bit against the much-abused "Agile" approach. That is OK. I believe having
+structure before starting the work helps with whatever approach you pick. In a sense, having an idea of how
+you could build a bus, allows you to reach the moped MVP faster.
 
 
 ## What Changed
 
 - The sandbox works. Multiple agents from a single terminal. Files edited directly. The infrastructure
-  friction of earlier days is gone.
+  friction of earlier days is gone
 - Multi-model workflows are viable. Running Gemini and Cursor on the same task, then merging, produced a more
-  complete result than either model alone.
+  complete result than either model alone
 - Iterative approval loops are essential, not optional. The formatting bug caught during review would have
-  been invisible to the AI.
+  been invisible to the AI
 - Scope discipline matters. The Log Tracker could have expanded into a full service design. Holding the line
-  on v1 scope -- deferring features as documented future capabilities -- kept the session productive.
+  on v1 scope -- deferring features as documented future capabilities -- kept the session productive
 
 ## Next Steps
 
-- Start actual implementation of the project using agents - Expand the RIS (rules/instructions) to make tests
-  a first-class citizen and ensure high quality
+- Start actual implementation of the project using agents
+- Expand the RIS (rules/instructions) to make tests a first-class citizen and ensure high quality
 - Find ways to reduce context-switching overhead between agents
 - Agents remain manually steered; autonomous operation is not yet preferred. Will likely never be for my
   personal use, where budget is a major constraint
