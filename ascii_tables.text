@@ -1,0 +1,19 @@
+# NOTE: Substack doesn't work well with tables. Therefore this is to be added directly into the article as a code block, to get something along those lines at least
+
+| Component            | Technology            | Rationale                                        |
+| -------------------- | --------------------- | ------------------------------------------------ |
+| **VCS**              | GitHub                | Zero infrastructure; industry standard.          |
+| **CI/CD**            | GitHub Actions        | Integrated with VCS; minimal setup.              |
+| **Linter**           | Ruff                  | High performance; consolidates multiple tools.   |
+| **Containerization** | Docker                | Official images; consistent environments.        |
+| **Artifact Tracker** | Local Docker Registry | Self-contained; fits single-host constraint.     |
+| **E2E Testing**      | Playwright            | Modern; fast; superior developer experience.     |
+| **Integration/Unit** | Pytest / HTTPX        | Comprehensive testing ecosystem; async support.  |
+
+| Component            | Technology            | Rationale                                        |
+| -------------------- | --------------------- | ------------------------------------------------ |
+| **Frontend**         | React / TypeScript    | Type safety; component-based architecture.       |
+| **Backend API**      | FastAPI / Python      | Lightweight; high performance; automatic docs.   |
+| **Database**         | SQLite                | File-based; zero-configuration; local-first.     |
+| **Authentication**   | JWT                   | Stateless; simple to implement in FastAPI.       |
+| **Orchestration**    | Docker Compose        | Low overhead; standard for small-scale projects. |
