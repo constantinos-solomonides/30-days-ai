@@ -1,0 +1,23 @@
+I put two AI models in a room to design the same system.
+
+Gemini focused on high-level structural trade-offs. Cursor produced three times the detail but lacked the same analytical weight.
+
+This is part of a 30-day experiment in high-intensity AI use.
+
+With the sandbox finally functional, the infrastructure friction is gone. The flow between design and documentation feels natural now.
+
+Merging their outputs produced a result strictly better than either model alone. But the process revealed exactly where human intervention is non-negotiable. My background in teaching and mentoring has been a quiet advantage here—guiding these agents is much like managing an enthusiastic junior colleague who needs clear, direct feedback and ego-free adjustment.
+
+In a review loop, I caught a formatting bug that would have broken the documentation rendering. The AI understood the semantic intent but ignored the presentation behavior. Semantic correctness is not enough for a professional deliverable.
+
+We made 17 technology decisions by applying a simple heuristic: pick the most lightweight option with an official Docker image.
+
+The result is a full implementation guide and a test plan for 48 specific scenarios. No application code has been written yet.
+
+The design exists before the implementation. Having structure before starting ensures the moped MVP actually leads toward the bus we intend to build.
+
+Full article:
+Wordpress: https://anthropocentricsoftware.wordpress.com/2026/03/18/day-09-convergence-through-iteration/
+Substack: https://csolomonides.substack.com/p/day-09-convergence-through-iteration
+
+#SoftwareEngineering #ArtificialIntelligence #Productivity #SystemDesign #LLM #Automation #SoftwareArchitecture #Mentoring
