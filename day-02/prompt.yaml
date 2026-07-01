@@ -39,7 +39,7 @@ article:
     metaphor:  The laundry storage approaches. Big pile or neatly folded?
     components:
       - name: "Axis: Types of documentation"
-        includes: 
+        includes:
             - Developer
             - User
             - Tester
@@ -50,17 +50,17 @@ article:
             - Later is sometimes never
             - Disjoint understanding or implementation
       - name: "Axis: For whom it is"
-        includes: 
+        includes:
             - Self now
             - Self in the future
             - Others that are technical
             - End users
         excludes: []
-        cost_of_ignoring: 
+        cost_of_ignoring:
             - It becomes harder to write documentation "later" because you forgot
             - Future self notes require work from current self
       - name: Depth and style of documentation
-        includes: 
+        includes:
             - Disjoint notes in a big file
             - Recording of sessions
             - Follow one of many documentation standards (META:{give links of documentation styles as example})
@@ -69,10 +69,10 @@ article:
   Real-world example:
     scenario:
       description: Returning to a challenging project
-      background: 
+      background:
         - I was assigned testing for the work of a team that wouldn't provide documentation
         - The team was practicing the "I'll just show you how it works" approach
-        - There was a circular logical fallacy in their approach 
+        - There was a circular logical fallacy in their approach
         - Fallacy stage one, they wouldn't provide their lab step-by-step, saying we should mimic customer setup
         - Fallacy stage two, they wouldn't provide generic instructions, they would simply demo their setup
       problems_that_arose:
@@ -87,9 +87,9 @@ article:
         - The documentation allowed me to go an 80% of the way avoiding interactions with a problematic  team
         - Others could take up testing without need for extensive handouts and watching videos
   my approach:
-    scenario: 
+    scenario:
       description: How I approach documentation
-      background: 
+      background:
         - The first time I was laid-off I realized that I left others one big pile
         - The company ended-up changing my layoff to an internal move, so I had to interact with the colleagues still (META:{describe feeling slight shame, couldn't take pride in my work})
       resolution:
